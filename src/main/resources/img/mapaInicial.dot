@@ -1,0 +1,20 @@
+digraph G {
+node [margin=0 fontcolor=black fontsize=18 width=0.5 shape=oval style=filled fillcolor=lightblue]AltaVerapaz ->SantaMaríadeJesús;
+AltaVerapaz ->Quiché;
+Petén ->CiudadVieja;
+Petén ->Huehuetenango;
+Petén ->SanBartoloméMilpasAltas;
+Quetzaltenango ->Retalhuleu;
+Quetzaltenango ->SanMarcos;
+Retalhuleu ->Quetzaltenango;
+Retalhuleu ->Suchitepequez;
+SanMarcos ->Quetzaltenango;
+SanMarcos ->SanBartoloméMilpasAltas;
+SanMarcos ->AltaVerapaz;
+Suchitepequez ->Guatemala;
+Guatemala ->SanBartoloméMilpasAltas;
+SanBartoloméMilpasAltas ->Petén;
+Huehuetenango ->SanLucasSacatepéquez;
+Quiché ->SantaLucíaMilpasAltas;
+SantaLucíaMilpasAltas ->SanBartoloméMilpasAltas;
+}
