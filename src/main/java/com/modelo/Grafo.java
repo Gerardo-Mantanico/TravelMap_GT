@@ -65,9 +65,21 @@ public class Grafo {
       GeneradorDotFile dot= new GeneradorDotFile();
       dot.generateDotFile(primero, "src/main/resources/img/mapaInicial.dot");
    }
-
     public NodoGrafo getPrimero() {
         return primero;
     }
-   
+    
+    //metodo para buscar un  nodo y retornarlo
+    public NodoGrafo buscarNodo(String nodo){
+        NodoGrafo temp=null;
+        while(primero!=null){
+            if(primero.nombre.equals(nodo)){
+                temp=primero;
+                break;
+            }
+            else{ primero=primero.getSiguiente();}
+        }
+        return temp;
+    }
+    
 }
