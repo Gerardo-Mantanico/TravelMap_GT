@@ -12,11 +12,6 @@ public class Arco {
     DetallesArco detalle;
     Arco siguiente;
     
-   /* public Arco (String destino){
-        this.destino=destino;
-        this.siguiente=null;
-    }*/
-
     public Arco(String destino,DetallesArco detalle) {
         this.destino = destino;
         this.detalle=detalle;

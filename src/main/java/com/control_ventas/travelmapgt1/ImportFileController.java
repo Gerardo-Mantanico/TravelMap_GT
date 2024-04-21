@@ -82,17 +82,5 @@ public class ImportFileController implements Initializable {
         });
          Parent root = loader.load();
         App.setRoot(root);
-        
-        
-        
-    /*    FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
-        
-        Parent root = loader.load();
-        HomeController controllerB = loader.getController();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.show();*/
     }
-
 }

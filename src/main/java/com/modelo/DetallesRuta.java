@@ -4,24 +4,20 @@
  */
 package com.modelo;
 
+import java.util.List;
+
 /**
  *
  * @author Gerardo Tax
  */
-public class DetallesArco {
+public class DetallesRuta {
     int tiempoVehiculo;
     int tiempoPie;
     int consumoGas;
     int desgastePersona;
     int distancia; 
- 
-    public DetallesArco(int tiempoVehiculo, int tiempoPie, int consumoGas, int desgastePersona, int distancia) {
-        this.tiempoVehiculo = tiempoVehiculo;
-        this.tiempoPie = tiempoPie;
-        this.consumoGas = consumoGas;
-        this.desgastePersona = desgastePersona;
-        this.distancia = distancia;
-    }
+    List<String> lista;
+
 
     public int getTiempoVehiculo() {
         return tiempoVehiculo;
@@ -62,7 +58,22 @@ public class DetallesArco {
     public void setDistancia(int distancia) {
         this.distancia = distancia;
     }
+
+    public List<String> getLista() {
+        return lista;
+    }
+
+    public void setLista(List<String> lista) {
+        this.lista = lista;
+    }
+    
+    public void inicializar(){
+        this.consumoGas=0;
+        this.desgastePersona=0;
+        this.distancia=0;
+        this.tiempoPie=0;
+        this.tiempoVehiculo=0;
+
+    }
     
 }
-
-

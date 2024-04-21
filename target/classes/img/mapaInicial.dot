@@ -1,7 +1,11 @@
-digraph G {
- bgcolor="#f0f0f0";  
- node [margin=0 fontcolor=black fontsize=18 width=0.5 shape=oval style=filled fillcolor=lightblue] 
-AltaVerapaz ->  {SantaMaríadeJesús  Quiché  } 
+digraph G { 
+ fontname="Helvetica,Arial,sans-serif"
+    bgcolor="#f0f0f0";
+    node [fontname="Helvetica,Arial,sans-serif"];
+    edge [fontname="Helvetica,Arial,sans-serif"];
+    graph [ratio=0.5];
+node [shape = oval, color=red style=filled, fillcolor=indianred1];SanMarcos SanBartoloméMilpasAltas Petén ; 
+ node [shape = oval color=black style=filled fillcolor=lightblue]AltaVerapaz ->  {SantaMaríadeJesús  Quiché  } 
  SantaMaríadeJesús ->  {} 
  Petén ->  {CiudadVieja  Huehuetenango  SanBartoloméMilpasAltas  } 
  CiudadVieja ->  {} 

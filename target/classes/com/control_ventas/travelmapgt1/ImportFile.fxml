@@ -86,6 +86,6 @@
       </Button>
    </children>
    <cursor>
-      <Cursor fx:constant="H_RESIZE" />
+      <Cursor fx:constant="HAND" />
    </cursor>
 </Pane>

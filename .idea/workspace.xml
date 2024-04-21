@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="892c6e22-be51-4544-b6f8-1a642bb113b7" name="Changes" comment="" />
+    <list default="true" id="892c6e22-be51-4544-b6f8-1a642bb113b7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/ImportFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/ImportFileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grafica/GeneradorDotFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grafica/GeneradorDotFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/modelo/Arco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/modelo/Arco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/modelo/DetallesArco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/modelo/DetallesArco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/modelo/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/modelo/Grafo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/GenerarRuta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/resource/GenerarRuta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/ImportFile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/ImportFile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/mapaInicial.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/mapaInicial.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/ubicacionActual.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/ubicacionActual.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/ubicacionActual.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/ubicacionActual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Generador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Generador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ImportFile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ImportFile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ImportFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ImportFileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/grafica/GeneradorDotFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grafica/GeneradorDotFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/Arco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/Arco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/Grafo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/GenerarRuta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/resource/GenerarRuta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/mapaInicial.dot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/mapaInicial.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/mapaInicial.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/mapaInicial.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/ubicacionActual.dot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/ubicacionActual.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/ubicacionActual.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/ubicacionActual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +46,12 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -76,6 +112,14 @@
       <workItem from="1712995138233" duration="57000" />
       <workItem from="1712995202772" duration="621000" />
       <workItem from="1713051950561" duration="1622000" />
+      <workItem from="1713462425083" duration="12000" />
+      <workItem from="1713462454570" duration="298000" />
+      <workItem from="1713462769410" duration="7896000" />
+      <workItem from="1713492153306" duration="3610000" />
+      <workItem from="1713545881465" duration="1160000" />
+      <workItem from="1713547062559" duration="2663000" />
+      <workItem from="1713579797618" duration="140000" />
+      <workItem from="1713720132065" duration="195000" />
     </task>
     <servers />
   </component>

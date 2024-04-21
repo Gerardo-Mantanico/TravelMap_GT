@@ -2,5 +2,5 @@ digraph G {
 rankdir=LR;
 bgcolor="#f0f0f0";  
  node [margin=0 fontcolor=black fontsize=18 width=0.5 shape=oval style=filled fillcolor=lightblue] 
-SanMarcos -> SanBartoloméMilpasAltas -> Petén;
+Quetzaltenango -> SanMarcos -> AltaVerapaz -> Quiché -> SantaLucíaMilpasAltas -> SanBartoloméMilpasAltas -> Petén;
 }

@@ -63,7 +63,7 @@ public class Grafo {
    
    public void imprimir(){
       GeneradorDotFile dot= new GeneradorDotFile();
-      dot.generateDotFile(primero, "src/main/resources/img/mapaInicial.dot");
+      dot.archivodot(primero, "src/main/resources/img/mapaInicial.dot",null);
    }
     public NodoGrafo getPrimero() {
         return primero;
@@ -71,6 +71,7 @@ public class Grafo {
     
     //metodo para buscar un  nodo y retornarlo
     public NodoGrafo buscarNodo(String nodo){
+        NodoGrafo prim=primero;
         NodoGrafo temp=null;
         while(primero!=null){
             if(primero.nombre.equals(nodo)){
@@ -79,7 +80,11 @@ public class Grafo {
             }
             else{ primero=primero.getSiguiente();}
         }
+        primero=prim;
         return temp;
     }
-    
+
+    public void setPrimero(NodoGrafo primero) {
+        this.primero = primero;
+    }
 }
