@@ -17,6 +17,7 @@ public class DetallesRuta {
     int consumoGas;
     int desgastePersona;
     int distancia; 
+    int rapidez;
     List<String> lista;
 
 
@@ -83,6 +84,14 @@ public class DetallesRuta {
 
     public void setLlave(int llave) {
         this.llave = llave;
+    }
+
+    public int getRapidez() {
+        return rapidez;
+    }
+
+    public void setRapidez(int rapidez) {
+        this.rapidez = rapidez;
     }
     
     

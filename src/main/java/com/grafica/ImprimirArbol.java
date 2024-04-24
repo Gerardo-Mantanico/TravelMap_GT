@@ -1,34 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.grafica;
 
+package com.grafica;
 import com.modelo.ArbolB;
 import com.modelo.NodoArbolB;
-import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
-   import java.io.FileWriter;
-import java.io.IOException;
+
 /**
  *
  * @author Gerardo Tax
  */
 public class ImprimirArbol {
 
-    public  void imprimirArbolB(ArbolB arbol, String archivoDot) {
+    public void imprimirArbolB(ArbolB arbol, String archivoDot) {
         try {
             FileWriter writer = new FileWriter(archivoDot);
             writer.write("digraph ArbolB {\n");
-          //  writer.write("rankdir=LR;\n");
-            //writer.write("node [shape = record, style=filled, fillcolor=seashell2]; \n");
-            writer.write(" node [shape=record, style=filled, fillcolor=lightblue, height=0.6, width=1.5];\n" +
-"    edge [arrowhead=none]; \n");
+            writer.write("bgcolor=\" #d0ccd7\";\n");
+            writer.write(" node [shape=record, style=filled, fillcolor=lightblue, height=0.6, width=1.5];\n"
+                    + "    edge [arrowhead=none]; \n");
             imprimirRecursivo(arbol.raiz, writer, "");
             writer.write("}\n");
             writer.close();
             System.out.println("Archivo DOT generado correctamente: " + archivoDot);
-                String command = "dot -Tpng " + archivoDot + " -o " + archivoDot.replace(".dot", ".png");
+            String command = "dot -Tpng " + archivoDot + " -o " + archivoDot.replace(".dot", ".png");
             Runtime.getRuntime().exec(command);
             System.out.println("Gráfico generado correctamente.");
         } catch (IOException e) {
@@ -36,7 +30,7 @@ public class ImprimirArbol {
         }
     }
 
-    private  void imprimirRecursivo(NodoArbolB nodo, FileWriter writer, String prefijo) throws IOException {
+    private void imprimirRecursivo(NodoArbolB nodo, FileWriter writer, String prefijo) throws IOException {
         if (nodo != null) {
             StringBuilder nodoLabel = new StringBuilder();
             nodoLabel.append(prefijo);
@@ -53,6 +47,3 @@ public class ImprimirArbol {
         }
     }
 }
-
-
-

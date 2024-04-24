@@ -136,7 +136,7 @@
                   <Image url="@../../../img/icons8-close-window-48.png" />
                </image>
             </ImageView>
-            <Label fx:id="Reloj" layoutX="2.0" layoutY="1.0" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #ffffff;" text="13:48:12" textOverrun="LEADING_WORD_ELLIPSIS">
+            <Label fx:id="Reloj" layoutX="2.0" layoutY="1.0"  onMouseClicked="#editarReloj"   prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #ffffff;" text="13:48:12" textOverrun="LEADING_WORD_ELLIPSIS">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -151,7 +151,12 @@
          </children>
       </Pane>
       <ComboBox fx:id="SelecionarRuta" layoutX="926.0" layoutY="79.0" prefHeight="25.0" prefWidth="198.0" promptText="Tipo de ruta" style="-fx-background-color: #f0f0f0;" />
-      <Button fx:id="VerDatos" layoutX="1254.0" layoutY="388.0" mnemonicParsing="false" style="-fx-background-color: #8092ad;" text="Ver datos"   onMouseClicked="#verDatos"   textFill="WHITE">
+      <Button fx:id="VerDatos" layoutX="1254.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#verDatos" style="-fx-background-color: #8092ad;" text="Ver datos" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="VerArbol" layoutX="1254.0" layoutY="432.0" mnemonicParsing="false" onMouseClicked="#verArbol" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: #8092ad;" text="Ver rutas" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>

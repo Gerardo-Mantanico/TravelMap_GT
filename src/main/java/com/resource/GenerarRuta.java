@@ -120,7 +120,7 @@ public class GenerarRuta {
      
         
         //Valores a ingresar primera ronda
-         ArbolB arbol = new ArbolB(2);
+         ArbolB arbol = new ArbolB(3);
          for(int i=0; i<rutasEncontradas.size();i++){
                  String ruta=" ";
                  for(String dato: rutasEncontradas.get(i).getLista()){

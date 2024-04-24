@@ -29,7 +29,7 @@ public class a {
             raiz.claves.add(clave);
             raiz.nombresNodos.add(nombreNodo);
         } else {
-            if (raiz.claves.size() == 2 * grado - 1) {
+            if (raiz.claves.size() == 2 * grado - 2) {
                 NodoArbolB nuevaRaiz = new NodoArbolB(grado, false);
                 nuevaRaiz.hijos.add(raiz);
                 dividirNodo(nuevaRaiz, 0, raiz);
@@ -54,7 +54,7 @@ public class a {
             }
             i++;
             NodoArbolB hijo = nodo.hijos.get(i);
-            if (hijo.claves.size() == 2 * grado - 1) {
+            if (hijo.claves.size() == 2 * grado - 2) {
                 dividirNodo(nodo, i, hijo);
                 if (clave > nodo.claves.get(i)) {
                     i++;
@@ -67,8 +67,8 @@ public class a {
     // Método para dividir un nodo en dos
     private void dividirNodo(NodoArbolB padre, int indice, NodoArbolB hijo) {
         NodoArbolB nuevoNodo = new NodoArbolB(grado, hijo.esHoja);
-        for (int i = 0; i < grado - 1; i++) {
-            nuevoNodo.claves.add(hijo.claves.remove(grado));
+        for (int i = 0; i < grado - 2; i++) {
+            nuevoNodo.claves.add(hijo.claves.remove(grado-3));
             nuevoNodo.nombresNodos.add(hijo.nombresNodos.remove(grado));
         }
         if (!hijo.esHoja) {
@@ -76,9 +76,9 @@ public class a {
                 nuevoNodo.hijos.add(hijo.hijos.remove(grado));
             }
         }
-        padre.claves.add(indice, hijo.claves.remove(grado - 1));
+        padre.claves.add(indice, hijo.claves.remove(grado -3));
         padre.nombresNodos.add(indice, hijo.nombresNodos.remove(grado - 1));
-        padre.hijos.add(indice + 1, nuevoNodo);
+        padre.hijos.add(indice , nuevoNodo);
     }
 
     // Método para imprimir el árbol B
@@ -122,13 +122,12 @@ public class a {
         arbolB.insertar(40, "Nodo B");
         arbolB.insertar(10, "Nodo C");
          arbolB.insertar(30, "Nodo D");
-       arbolB.insertar(15, "Nodo F");
-        arbolB.insertar(35, "Nodo G");
+     arbolB.insertar(15, "Nodo F");
+     /* arbolB.insertar(35, "Nodo G");
        arbolB.insertar(7, "Nodo H");
         arbolB.insertar(26, "Nodo I");
         arbolB.insertar(18, "Nodo K");
-         arbolB.insertar(22, "Nodo L");
-         arbolB.insertar(23, "Nodo L");
+         arbolB.insertar(22, "Nodo L");*/
 
 
         System.out.println("Árbol B:");

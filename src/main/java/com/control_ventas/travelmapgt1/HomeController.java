@@ -6,11 +6,14 @@ import com.modelo.TipoDeRuta;
 import com.resource.Alerta;
 import com.resource.Funcionalidad;
 import com.resource.GenerarRuta;
+import com.resource.Reloj;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,13 +27,14 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class HomeController implements Initializable{
+public class HomeController   implements Initializable{
     Grafo grafo;
     Alerta alerta= new Alerta();
     Funcionalidad funcionalidad= new Funcionalidad();
     String tipoRuta=" ";
     List<DetallesRuta> listaRutas=null;
     GenerarRuta  generadorRuta= new GenerarRuta(this);
+    Reloj reloj = new Reloj();
     @FXML
     private RadioButton Caminar;
 
@@ -77,8 +81,10 @@ public class HomeController implements Initializable{
         System.exit(0);
     }
    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        reloj.horaActual(Reloj);
         Cargar();
     }
 
@@ -153,6 +159,16 @@ public class HomeController implements Initializable{
         stage.show();
     }
 
+    //meto para ver arbol b
+    @FXML
+    public void verArbol() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ArbolB.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+    
     public Grafo getGrafo() {
         return grafo;
     }
@@ -250,4 +266,19 @@ public class HomeController implements Initializable{
         generadorRuta.VerDetalles(tipoRuta);
         generadorRuta.imprimir();
     }
+    
+    //metodo de reloj
+   @FXML
+   public void editarReloj() throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Reloj.fxml"));
+        loader.setControllerFactory(controllerClass -> {
+            return new RelojController(reloj);
+        });
+        Parent root = loader.load();
+        RelojController controllerB = loader.getController();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+   }
+
 }
