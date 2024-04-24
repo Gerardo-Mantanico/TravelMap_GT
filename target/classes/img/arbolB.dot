@@ -1,0 +1,9 @@
+digraph ArbolB {
+ node [shape=record, style=filled, fillcolor=lightblue, height=0.6, width=1.5];
+    edge [arrowhead=none]; 
+488484494 [label="<f0> |  SanMarcos Petén  | "];
+488484494 -> 1935032880;
+1935032880 [label="    <f0> |  SanMarcos SanBartoloméMilpasAltas Petén  | "];
+488484494 -> 1447008623;
+1447008623 [label="    <f0> |  SanMarcos toto Petén  | <f1> |  SanMarcos AltaVerapaz Quiché SantaLucíaMilpasAltas SanBartoloméMilpasAltas Petén  | <f2> |  SanMarcos Quetzaltenango Retalhuleu Suchitepequez Guatemala SanBartoloméMilpasAltas Petén  | "];
+}

@@ -91,21 +91,14 @@ public class HomeController implements Initializable{
                     alerta.showAlert("Por favor, Selecione un tipo de ruta", "Error de seleccion de ruta");
                 } else {
                     if (SelecionarRuta.getValue() != null) {
-                      if(listaRutas!= null){
-                          listaRutas.clear();
-                      }
-                        generadorRuta.encontrarRutas(grafo, Origen.getValue(), Destino.getValue(), new ArrayList<String> (), new DetallesRuta()); //busca las posibles rutas
-                        this.listaRutas=  new ArrayList<>(funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(),SelecionarRuta.getValue().getId()));  //busca  las posibles rutas en base la funcionalidad
-                        PosiblesRutas.setVisible(true);
-                        SiguienteRuta.setVisible(true);
-                        generadorRuta.imgNodoActual(grafo.buscarNodo(Origen.getValue()),grafo.buscarNodo(Destino.getValue()));
-                        generadorRuta.crearRuta();
-                        generadorRuta.VerDetalles(tipoRuta);
-                        generadorRuta.imprimir();
+                        if (listaRutas != null) {
+                            listaRutas.clear();
+                        }
+                        tipoDeRutas();
+                    } else {
+                        alerta.showAlert("Por favor, Selecione un tipo de ruta", "Error de seleccion de ruta");
                     }
-                    else{alerta.showAlert("Por favor, Selecione un tipo de ruta", "Error de seleccion de ruta"); }
                 }
-
             } else {
                 alerta.showAlert("No se puede calcular una ruta porque el origen y el destino tienen la misma ubicacion", "Error de Ubicacion");
             }
@@ -117,6 +110,35 @@ public class HomeController implements Initializable{
         }
     }
 
+    void tipoDeRutas() {
+        if (tipoRuta.equals("Vehiculo")) {
+            generadorRuta.encontrarRutas(grafo, Origen.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta()); //busca las posibles rutas
+            this.listaRutas = new ArrayList<>(funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId()));  //busca  las posibles rutas en base la funcionalidad
+            generadorRuta.crearRuta(true);
+            generadorRuta.imgNodoActual(grafo.buscarNodo(Origen.getValue()), grafo.buscarNodo(Destino.getValue()));
+            generadorRuta.VerDetalles(tipoRuta);
+            generadorRuta.imprimir();
+        } else {
+            try {
+                generadorRuta.encontrarRutas(grafo, Origen.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta()); //busca las posibles rutas
+                this.listaRutas = new ArrayList<>(funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId()));  //busca  las posibles rutas en base la funcionalidad
+                generadorRuta.imgNodoActual(grafo.buscarNodo(Origen.getValue()), grafo.buscarNodo(Destino.getValue()));
+                generadorRuta.crearRuta(true);
+                generadorRuta.VerDetalles(tipoRuta);
+                generadorRuta.imprimir();
+            } catch (Exception e) {
+                generadorRuta.encontrarRutas(grafo, Destino.getValue(), Origen.getValue(), new ArrayList<String>(), new DetallesRuta());
+                this.listaRutas = new ArrayList<>(funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId()));  //busca  las posibles rutas en base la funcionalidad
+               generadorRuta.crearRuta(false);
+                generadorRuta.imgNodoActual(grafo.buscarNodo(Origen.getValue()), grafo.buscarNodo(Destino.getValue()));
+                generadorRuta.VerDetalles(tipoRuta);
+                generadorRuta.imprimir();
+            }
+        }
+         PosiblesRutas.setVisible(true);
+            SiguienteRuta.setVisible(true);
+    }
+    
     @FXML
     //metodo para ver reportes de funcionalidad
     public void verDatos() throws IOException {
@@ -214,7 +236,12 @@ public class HomeController implements Initializable{
     @FXML
     public void recalcular() {
         generadorRuta.encontrarRutas(grafo, PosiblesRutas.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta()); //busca las posibles rutas
+        if(generadorRuta.getRutasEncontradas().size()==0){
+            alerta.showAlert("Error no se pudo encontrar una ruta", "Informativo");
+            return;
+        }
         funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId()); //busca  las posibles rutas en base la funcionalidad
+        generadorRuta.crearRuta(true);
         if (generadorRuta.imgNodoActual(grafo.buscarNodo(PosiblesRutas.getValue()), grafo.buscarNodo(Destino.getValue()))) {
             PosiblesRutas.setVisible(false);
             SiguienteRuta.setVisible(false);

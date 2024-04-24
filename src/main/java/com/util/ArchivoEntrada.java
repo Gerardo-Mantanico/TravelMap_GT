@@ -50,6 +50,7 @@ public class ArchivoEntrada {
         String campo[] = texto.split("\\|");
         grafo.nuevoNodo(campo[0]);
         grafo.nuevoNodo(campo[1]);
+        //meto para rebersi el mapa
         DetallesArco detalles = new DetallesArco(
                 Integer.valueOf(campo[2]),
                 Integer.valueOf(campo[3]),
@@ -58,6 +59,9 @@ public class ArchivoEntrada {
                 Integer.valueOf(campo[6])
         );
         grafo.NuevaArco(campo[0], campo[1], detalles);
+        //metodo para generar diferentes tipo de rutas
+        
+        //grafo.NuevaArco(campo[1], campo[0], detalles);
     }
 
     void cargarTrafico(String texto) {

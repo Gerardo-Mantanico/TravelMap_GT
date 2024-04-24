@@ -1,11 +1,13 @@
 package com.resource;
 import com.control_ventas.travelmapgt1.HomeController;
 import com.grafica.GeneradorDotFile;
+import com.modelo.ArbolB;
 import com.modelo.Arco;
 import com.modelo.DetallesRuta;
 import com.modelo.Grafo;
 import com.modelo.NodoGrafo;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -25,28 +27,41 @@ public class GenerarRuta {
     }
 
     public boolean imgNodoActual(NodoGrafo origen, NodoGrafo destino) {
-        boolean estado=false;
+        boolean estado = false;
         NodoGrafo primero = homeController.getGrafo().getPrimero();  //todo el mapa
         dot.archivodot(homeController.getGrafo().getPrimero(), "src/main/resources/img/mapaInicial.dot", rutasEncontradas.get(0).getLista());
         img.img(homeController.getImgActual(), "/img/mapaInicial.png");
         if (origen == destino) {
-            estado=true;
+            estado = true;
             rutasEncontradas.clear();
         } else {
-            Arco temp = origen.getLista().getPrimero();
-            homeController.getPosiblesRutas().getItems().clear();
-            while (temp != null) {
-                homeController.getPosiblesRutas().getItems().add(temp.getDestino());
-                temp = temp.getSiguiente();
+            if (origen.getLista().listaVacia()) {
+                 rutasEncontradas.get(0).getLista().remove(0);
+                homeController.getPosiblesRutas().getItems().add(rutasEncontradas.get(0).getLista().get(0));
+                rutasEncontradas.get(0).getLista().remove(0);
+            } else {
+                Arco temp = origen.getLista().getPrimero();
+                homeController.getPosiblesRutas().getItems().clear();
+                while (temp != null) {
+                    homeController.getPosiblesRutas().getItems().add(temp.getDestino());
+                    temp = temp.getSiguiente();
+                }
             }
+
         }
-        homeController.getGrafo().setPrimero(primero);
         return estado;
     }
+
     
     //metodo para mostrar la ruta en la imagen
-    public void crearRuta() {
-        dot.ruta(rutasEncontradas.get(0).getLista(), "src/main/resources/img/ubicacionActual.dot");
+    public void crearRuta(boolean estado) {
+        if (estado) {
+         dot.ruta(rutasEncontradas.get(0).getLista(), "src/main/resources/img/ubicacionActual.dot");
+        } else {
+            Collections.reverse(rutasEncontradas.get(0).getLista());
+            Collections.reverse(rutasEncontradas.get(rutasEncontradas.size()-1) .getLista());
+            dot.ruta(rutasEncontradas.get(0).getLista(), "src/main/resources/img/ubicacionActual.dot");
+        }
         img.img(homeController.getImgMejorRuta(), "/img/ubicacionActual.png");
     }
 
@@ -102,6 +117,21 @@ public class GenerarRuta {
             }
             System.out.println(); // Para imprimir un salto de línea al final de cada ruta
         }
+     
+        
+        //Valores a ingresar primera ronda
+         ArbolB arbol = new ArbolB(2);
+         for(int i=0; i<rutasEncontradas.size();i++){
+                 String ruta=" ";
+                 for(String dato: rutasEncontradas.get(i).getLista()){
+                     ruta=ruta+dato+" ";
+                 }
+               arbol.insertar(i+1, ruta);
+         }
+         arbol.imprimir();
+       
+         dot.generarArbol(arbol, " ","src/main/resources/img/arbolB.dot");
+        rutasEncontradas.clear();
     }
 
     

@@ -11,6 +11,7 @@ import java.util.List;
  * @author Gerardo Tax
  */
 public class DetallesRuta {
+    int llave;
     int tiempoVehiculo;
     int tiempoPie;
     int consumoGas;
@@ -75,5 +76,14 @@ public class DetallesRuta {
         this.tiempoVehiculo=0;
 
     }
+
+    public int getLlave() {
+        return llave;
+    }
+
+    public void setLlave(int llave) {
+        this.llave = llave;
+    }
+    
     
 }

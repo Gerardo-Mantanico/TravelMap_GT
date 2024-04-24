@@ -43,14 +43,14 @@ public class DatoController implements Initializable {
         detalles.setEditable(false);
         if (tipo.equals("Vehiculo")) {
             tipoReporte.setText("Informacion de ruta en vehiculo");
-            cargarDetalles("Mejor Ruta", lista.getFirst(), true);
-            cargarDetalles("Peor Ruta", lista.getLast(),true);
+            cargarDetalles("Mejor Ruta", lista.get(0), true);
+            cargarDetalles("Peor Ruta", lista.get(lista.size()-1),true);
 
         }
         else{
              tipoReporte.setText("Informacion de ruta caminando");
-            cargarDetalles("Mejor Ruta", lista.getFirst(),false);
-            cargarDetalles("Peor Ruta", lista.getLast(),false);
+            cargarDetalles("Mejor Ruta", lista.get(0),false);
+            cargarDetalles("Peor Ruta", lista.get(lista.size()-1),false);
         }
 
     }    

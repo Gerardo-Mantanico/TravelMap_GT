@@ -11,7 +11,7 @@ node [shape = oval, color=red style=filled, fillcolor=indianred1];SanMarcos SanB
  CiudadVieja ->  {} 
  Quetzaltenango ->  {Retalhuleu  SanMarcos  } 
  Retalhuleu ->  {Quetzaltenango  Suchitepequez  } 
- SanMarcos ->  {Quetzaltenango  SanBartoloméMilpasAltas  AltaVerapaz  } 
+ SanMarcos ->  {Quetzaltenango  SanBartoloméMilpasAltas  AltaVerapaz  Petén  toto  } 
  Suchitepequez ->  {Guatemala  } 
  Guatemala ->  {SanBartoloméMilpasAltas  } 
  SanBartoloméMilpasAltas ->  {Petén  } 
@@ -19,4 +19,5 @@ node [shape = oval, color=red style=filled, fillcolor=indianred1];SanMarcos SanB
  SanLucasSacatepéquez ->  {} 
  Quiché ->  {SantaLucíaMilpasAltas  } 
  SantaLucíaMilpasAltas ->  {SanBartoloméMilpasAltas  } 
+ toto ->  {Petén  } 
  }
