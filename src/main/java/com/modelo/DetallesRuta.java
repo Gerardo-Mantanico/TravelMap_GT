@@ -17,7 +17,8 @@ public class DetallesRuta {
     int consumoGas;
     int desgastePersona;
     int distancia; 
-    int rapidez;
+    int rapidezVehiculo;
+    int rapidezCaminando;
     List<String> lista;
 
 
@@ -75,6 +76,8 @@ public class DetallesRuta {
         this.distancia=0;
         this.tiempoPie=0;
         this.tiempoVehiculo=0;
+        this.rapidezCaminando=0;
+        this.rapidezVehiculo=0;
 
     }
 
@@ -86,13 +89,22 @@ public class DetallesRuta {
         this.llave = llave;
     }
 
-    public int getRapidez() {
-        return rapidez;
+    public int getRapidezVehiculo() {
+        return rapidezVehiculo;
     }
 
-    public void setRapidez(int rapidez) {
-        this.rapidez = rapidez;
+    public void setRapidezVehiculo(int rapidezVehiculo) {
+        this.rapidezVehiculo = rapidezVehiculo;
     }
-    
+
+    public int getRapidezCaminando() {
+        return rapidezCaminando;
+    }
+
+    public void setRapidezCaminando(int rapidezCaminando) {
+        this.rapidezCaminando = rapidezCaminando;
+    }
+
+ 
     
 }

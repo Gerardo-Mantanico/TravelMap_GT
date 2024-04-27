@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 
 public class HomeController   implements Initializable{
     Grafo grafo;
+    Grafo grafo2;
     Alerta alerta= new Alerta();
     Funcionalidad funcionalidad= new Funcionalidad();
     String tipoRuta=" ";
@@ -72,8 +73,9 @@ public class HomeController   implements Initializable{
     private ComboBox<TipoDeRuta> SelecionarRuta;
     
 
-    public HomeController(Grafo grafo) {
+    public HomeController(Grafo grafo, Grafo grafo2) {
         this.grafo = grafo;
+        this.grafo2=grafo2;
     }
     
         @FXML
@@ -86,6 +88,7 @@ public class HomeController   implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         reloj.horaActual(Reloj);
         Cargar();
+        DetallesRuta.setEditable(false);
     }
 
     @FXML
@@ -116,30 +119,22 @@ public class HomeController   implements Initializable{
         }
     }
 
+    //mejorar este metodo
     void tipoDeRutas() {
         if (tipoRuta.equals("Vehiculo")) {
-            generadorRuta.encontrarRutas(grafo, Origen.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta()); //busca las posibles rutas
+            generadorRuta.encontrarRutas(grafo, Origen.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta(),obtenerHora()); //busca las posibles rutas
             this.listaRutas = new ArrayList<>(funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId()));  //busca  las posibles rutas en base la funcionalidad
             generadorRuta.crearRuta(true);
             generadorRuta.imgNodoActual(grafo.buscarNodo(Origen.getValue()), grafo.buscarNodo(Destino.getValue()));
             generadorRuta.VerDetalles(tipoRuta);
             generadorRuta.imprimir();
         } else {
-            try {
-                generadorRuta.encontrarRutas(grafo, Origen.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta()); //busca las posibles rutas
+                generadorRuta.encontrarRutas(grafo2, Origen.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta(),obtenerHora()); //busca las posibles rutas
                 this.listaRutas = new ArrayList<>(funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId()));  //busca  las posibles rutas en base la funcionalidad
-                generadorRuta.imgNodoActual(grafo.buscarNodo(Origen.getValue()), grafo.buscarNodo(Destino.getValue()));
+                generadorRuta.imgNodoActual(grafo2.buscarNodo(Origen.getValue()), grafo2.buscarNodo(Destino.getValue()));
                 generadorRuta.crearRuta(true);
                 generadorRuta.VerDetalles(tipoRuta);
                 generadorRuta.imprimir();
-            } catch (Exception e) {
-                generadorRuta.encontrarRutas(grafo, Destino.getValue(), Origen.getValue(), new ArrayList<String>(), new DetallesRuta());
-                this.listaRutas = new ArrayList<>(funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId()));  //busca  las posibles rutas en base la funcionalidad
-               generadorRuta.crearRuta(false);
-                generadorRuta.imgNodoActual(grafo.buscarNodo(Origen.getValue()), grafo.buscarNodo(Destino.getValue()));
-                generadorRuta.VerDetalles(tipoRuta);
-                generadorRuta.imprimir();
-            }
         }
          PosiblesRutas.setVisible(true);
             SiguienteRuta.setVisible(true);
@@ -251,7 +246,7 @@ public class HomeController   implements Initializable{
 
     @FXML
     public void recalcular() {
-        generadorRuta.encontrarRutas(grafo, PosiblesRutas.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta()); //busca las posibles rutas
+        generadorRuta.encontrarRutas(grafo, PosiblesRutas.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta(),obtenerHora()); //busca las posibles rutas
         if(generadorRuta.getRutasEncontradas().size()==0){
             alerta.showAlert("Error no se pudo encontrar una ruta", "Informativo");
             return;
@@ -279,6 +274,11 @@ public class HomeController   implements Initializable{
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
+   }
+   
+   int obtenerHora(){
+       String hora[]=Reloj.getText().split(":");
+       return Integer.valueOf(hora[0]);
    }
 
 }

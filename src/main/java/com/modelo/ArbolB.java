@@ -1,14 +1,12 @@
-
 package com.modelo;
-
-import com.control_ventas.travelmapgt1.a;
 
 /**
  *
  * @author Gerardo Tax
  */
 public class ArbolB {
-      public NodoArbolB raiz;
+
+    public NodoArbolB raiz;
     private int grado; // Grado del árbol B
 
     public ArbolB(int grado) {
@@ -62,7 +60,7 @@ public class ArbolB {
     private void dividirNodo(NodoArbolB padre, int indice, NodoArbolB hijo) {
         NodoArbolB nuevoNodo = new NodoArbolB(grado, hijo.esHoja);
         for (int i = 0; i < grado - 2; i++) {
-            nuevoNodo.claves.add(hijo.claves.remove(grado-3));
+            nuevoNodo.claves.add(hijo.claves.remove(grado - 3));
             nuevoNodo.nombresNodos.add(hijo.nombresNodos.remove(grado));
         }
         if (!hijo.esHoja) {
@@ -72,7 +70,7 @@ public class ArbolB {
         }
         padre.claves.add(indice, hijo.claves.remove(grado - 3));
         padre.nombresNodos.add(indice, hijo.nombresNodos.remove(grado - 1));
-        padre.hijos.add(indice , nuevoNodo);
+        padre.hijos.add(indice, nuevoNodo);
     }
 
     // Método para imprimir el árbol B
@@ -83,9 +81,9 @@ public class ArbolB {
     private void imprimirRecursivo(NodoArbolB nodo, String prefijo) {
         if (nodo != null) {
             System.out.print(prefijo);
-            
+
             for (int i = 0; i < nodo.claves.size(); i++) {
-                System.out.print("(" + nodo.nombresNodos.get(i) +nodo.claves.get(i)+ ") ");
+                System.out.print("(" + nodo.nombresNodos.get(i) + nodo.claves.get(i) + ") ");
             }
             System.out.println();
             if (!nodo.esHoja) {
@@ -97,5 +95,3 @@ public class ArbolB {
     }
 
 }
-
-

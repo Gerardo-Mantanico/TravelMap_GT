@@ -87,4 +87,9 @@ public class Grafo {
     public void setPrimero(NodoGrafo primero) {
         this.primero = primero;
     }
+    
+     @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }

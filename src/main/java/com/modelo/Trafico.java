@@ -6,38 +6,16 @@ package com.modelo;
  * @author Gerardo Tax
  */
 public class Trafico {
-    String origin;
-    String destino;
     int horaInicio;
     int horaFinal;
     int ProbabilidadTrafico;
 
-    public Trafico(String origin, String destino, int horaInicio, int horaFinal, int ProbabilidadTrafico) {
-        this.origin = origin;
-        this.destino = destino;
+    public Trafico( int horaInicio, int horaFinal, int ProbabilidadTrafico) {
         this.horaInicio = horaInicio;
         this.horaFinal = horaFinal;
         this.ProbabilidadTrafico = ProbabilidadTrafico;
     }
     
-    
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
-    public String getDestino() {
-        return destino;
-    }
-
-    public void setDestino(String destino) {
-        this.destino = destino;
-    }
-
     public int getHoraInicio() {
         return horaInicio;
     }

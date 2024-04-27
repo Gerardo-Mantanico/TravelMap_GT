@@ -17,6 +17,7 @@ public class Arco {
         this.detalle=detalle;
         this.siguiente = null;
     }
+    public Arco(){}
 
     public String getDestino() {
         return destino;

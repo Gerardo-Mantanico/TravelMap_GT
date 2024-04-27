@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="529.0" prefWidth="668.0" style="-fx-background-color: #d0ccd7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.control_ventas.travelmapgt1.DatoController">
+<AnchorPane id="AnchorPane" prefHeight="529.0" prefWidth="922.0" style="-fx-background-color: #d0ccd7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.control_ventas.travelmapgt1.DatoController">
    <children>
-      <Label fx:id="tipoReporte" layoutX="232.0" layoutY="39.0" text="Informacion de Vehiculo">
+      <Label fx:id="tipoReporte" layoutX="339.0" layoutY="39.0" text="Informacion de Vehiculo">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextArea fx:id="detalles" layoutX="29.0" layoutY="88.0" prefHeight="409.0" prefWidth="614.0" />
+      <TextArea fx:id="detalles" layoutX="21.0" layoutY="88.0" prefHeight="421.0" prefWidth="882.0" />
    </children>
 </AnchorPane>

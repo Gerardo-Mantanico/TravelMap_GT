@@ -46,7 +46,7 @@ public class ImportFileController implements Initializable {
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        PanelMapa.setVisible(false);
+        PanelMapa.setVisible(true);
         ImportarTrafico.setVisible(false);
         Siguiente.setVisible(false);
         
@@ -58,19 +58,19 @@ public class ImportFileController implements Initializable {
     @FXML
     private void ImportarRuta() {
         if (archivo.Lectura(1, ImportarRuta)) {
-            PanelMapa.setVisible(true);
-            Siguiente.setVisible(true);
-            archivo.getGrafo().imprimir();
-            img.img(Mapa, "/img/mapaInicial.png");
+           ImportarTrafico.setVisible(true);
+           ImportarRuta.setVisible(false);
         }
     }
 
     @FXML
     private void ImportarTrafico() {
         if (archivo.Lectura(2, ImportarTrafico)) {
-            PanelMapa.setVisible(true);
-            Image image = new Image(getClass().getResourceAsStream("@../../../../resources/img/mapaInicial.png"));
-            Mapa.setImage(image);
+             PanelMapa.setVisible(true);
+            Siguiente.setVisible(true);
+            archivo.getGrafo().imprimir();
+            img.img(Mapa, "/img/mapaInicial.png");
+            ImportarTrafico.setVisible(false);
         }
     }
 
@@ -78,7 +78,7 @@ public class ImportFileController implements Initializable {
     private void siguienteVentana() throws IOException {
          FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
          loader.setControllerFactory(controllerClass -> {
-            return new HomeController(archivo.getGrafo());
+            return new HomeController(archivo.getGrafo(), archivo.getGrafo2());
         });
          Parent root = loader.load();
         App.setRoot(root);

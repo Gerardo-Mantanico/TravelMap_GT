@@ -3,9 +3,11 @@ import com.control_ventas.travelmapgt1.HomeController;
 import com.grafica.GeneradorDotFile;
 import com.modelo.ArbolB;
 import com.modelo.Arco;
+import com.modelo.DetallesArco;
 import com.modelo.DetallesRuta;
 import com.modelo.Grafo;
 import com.modelo.NodoGrafo;
+import com.modelo.Trafico;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -32,22 +34,21 @@ public class GenerarRuta {
         dot.archivodot(homeController.getGrafo().getPrimero(), "src/main/resources/img/mapaInicial.dot", rutasEncontradas.get(0).getLista());
         img.img(homeController.getImgActual(), "/img/mapaInicial.png");
         if (origen == destino) {
-            estado = true;
-            rutasEncontradas.clear();
+                  estado = true;
+                  rutasEncontradas.clear();
         } else {
-            if (origen.getLista().listaVacia()) {
-                 rutasEncontradas.get(0).getLista().remove(0);
-                homeController.getPosiblesRutas().getItems().add(rutasEncontradas.get(0).getLista().get(0));
-                rutasEncontradas.get(0).getLista().remove(0);
-            } else {
-                Arco temp = origen.getLista().getPrimero();
-                homeController.getPosiblesRutas().getItems().clear();
-                while (temp != null) {
-                    homeController.getPosiblesRutas().getItems().add(temp.getDestino());
-                    temp = temp.getSiguiente();
-                }
-            }
-
+                if (origen.getLista().listaVacia()) {
+                          rutasEncontradas.get(0).getLista().remove(0);
+                           homeController.getPosiblesRutas().getItems().add(rutasEncontradas.get(0).getLista().get(0));
+                           rutasEncontradas.get(0).getLista().remove(0);
+                } else {
+                           Arco temp = origen.getLista().getPrimero();
+                           homeController.getPosiblesRutas().getItems().clear();
+                            while (temp != null) {
+                                    homeController.getPosiblesRutas().getItems().add(temp.getDestino());
+                                    temp = temp.getSiguiente();
+                           }
+                  }
         }
         return estado;
     }
@@ -55,23 +56,22 @@ public class GenerarRuta {
     
     //metodo para mostrar la ruta en la imagen
     public void crearRuta(boolean estado) {
-        if (estado) {
-         dot.ruta(rutasEncontradas.get(0).getLista(), "src/main/resources/img/ubicacionActual.dot");
-        } else {
-            Collections.reverse(rutasEncontradas.get(0).getLista());
-            Collections.reverse(rutasEncontradas.get(rutasEncontradas.size()-1) .getLista());
-            dot.ruta(rutasEncontradas.get(0).getLista(), "src/main/resources/img/ubicacionActual.dot");
+        if (estado) 
+                  dot.ruta(rutasEncontradas.get(0).getLista(), "src/main/resources/img/ubicacionActual.dot");
+         else {
+                  Collections.reverse(rutasEncontradas.get(0).getLista());
+                  Collections.reverse(rutasEncontradas.get(rutasEncontradas.size()-1) .getLista());
+                  dot.ruta(rutasEncontradas.get(0).getLista(), "src/main/resources/img/ubicacionActual.dot");
         }
         img.img(homeController.getImgMejorRuta(), "/img/ubicacionActual.png");
     }
 
     public void mapa() {
         img.img(homeController.getImgActual(), "/img/mapaInicial.png");
-
     }
 
         //este metodo es el encargado de buscar las diferentes tipos de rutas
-    public void encontrarRutas(Grafo grafo, String inicio, String destino, List<String> visitados, DetallesRuta detalles) {
+    public void encontrarRutas(Grafo grafo, String inicio, String destino, List<String> visitados, DetallesRuta detalles, int hora) {
         visitados.add(inicio);
         if (inicio.equals(destino)) {
             DetallesRuta detalles1 = new DetallesRuta();
@@ -80,6 +80,8 @@ public class GenerarRuta {
             detalles1.setDistancia(detalles.getDistancia());
             detalles1.setTiempoPie(detalles.getTiempoPie());
             detalles1.setTiempoVehiculo(detalles.getTiempoVehiculo());
+            detalles1.setRapidezVehiculo(detalles.getRapidezVehiculo());
+            detalles1.setRapidezCaminando(detalles.getRapidezCaminando());
             detalles1.setLista(new ArrayList<>(visitados));
             rutasEncontradas.add(detalles1);
             detalles.inicializar();
@@ -96,7 +98,10 @@ public class GenerarRuta {
                             detalles.setDistancia(detalles.getDistancia() + arco.getDetalle().getDistancia());
                             detalles.setTiempoPie(detalles.getTiempoPie() + arco.getDetalle().getTiempoPie());
                             detalles.setTiempoVehiculo(detalles.getTiempoVehiculo() + arco.getDetalle().getTiempoVehiculo());
-                            encontrarRutas(grafo, arco.getDestino(), destino, new ArrayList<String>(visitados), detalles);
+                            funcionalidadTrafico(hora, arco.getDetalle());  //verificar si existe trafico
+                            detalles.setRapidezVehiculo(detalles.getRapidezVehiculo() + arco.getDetalle().getRapidez());
+                            detalles.setRapidezCaminando(detalles.getRapidezCaminando() + arco.getDetalle().getRapidezCaminando());
+                            encontrarRutas(grafo, arco.getDestino(), destino, new ArrayList<String>(visitados), detalles, hora);
                         }
                         arco = arco.getSiguiente();
                     }
@@ -111,26 +116,24 @@ public class GenerarRuta {
     public void imprimir() {
         for (DetallesRuta ruta : rutasEncontradas) {
             System.out.println("Distancia Total   " + ruta.getDistancia() + " Km   Total de tiempo vehiculo " + ruta.getTiempoVehiculo() + " s   Caminando"
-                    + ruta.getTiempoPie() + " s  Consumo de Gas " + ruta.getConsumoGas() + " galones  desgaste fisico " + ruta.getDesgastePersona());
+                    + ruta.getTiempoPie() + " s  Consumo de Gas " + ruta.getConsumoGas() + " galones  desgaste fisico " + ruta.getDesgastePersona()+"    rapidez  "+ruta.getRapidezVehiculo());
             for (String nodo : ruta.getLista()) {
                 System.out.print(nodo + " -> ");
             }
             System.out.println(); // Para imprimir un salto de línea al final de cada ruta
         }
-     
-        
+
         //Valores a ingresar primera ronda
-         ArbolB arbol = new ArbolB(3);
-         for(int i=0; i<rutasEncontradas.size();i++){
-                 String ruta=" ";
-                 for(String dato: rutasEncontradas.get(i).getLista()){
-                     ruta=ruta+dato+" ";
-                 }
-               arbol.insertar(i+1, ruta);
-         }
-         arbol.imprimir();
-       
-         dot.generarArbol(arbol, " ","src/main/resources/img/arbolB.dot");
+        ArbolB arbol = new ArbolB(3);
+        for (int i = 0; i < rutasEncontradas.size(); i++) {
+            String ruta = " ";
+            for (String dato : rutasEncontradas.get(i).getLista()) {
+                ruta = ruta + dato + " ";
+            }
+            arbol.insertar(i + 1, ruta);
+        }
+        //arbol.imprimir();
+        dot.generarArbol(arbol, " ", "src/main/resources/img/arbolB.dot");
         rutasEncontradas.clear();
     }
 
@@ -140,13 +143,31 @@ public class GenerarRuta {
         this.homeController.getDetallesRuta().setText("");
         DetallesRuta ruta = rutasEncontradas.get(0);
         if (tipo.equals("Vehiculo")) {
-            homeController.getDetallesRuta().setText("Distancia: " + ruta.getDistancia() + " Km  \n\nTiempo: " + ruta.getTiempoVehiculo() + " Minutos   \n\nConsumo de gasolina: " + ruta.getConsumoGas() + " Galones \n");
+            homeController.getDetallesRuta().setText("Distancia: " + ruta.getDistancia() + " Km  \n\nTiempo: " + ruta.getTiempoVehiculo() + " Minutos   \n\nConsumo de gasolina: " + ruta.getConsumoGas() + " Galones \n\nRapidez : "+ruta.getRapidezVehiculo());
         } else {
-            homeController.getDetallesRuta().setText("Distancia: " + ruta.getDistancia() + " Km  \n\nTiempo: " + ruta.getTiempoPie() + " Minutos \n\nDesgaste fisico: " + ruta.getDesgastePersona() + " Caloria \n");
+            homeController.getDetallesRuta().setText("Distancia: " + ruta.getDistancia() + " Km  \n\nTiempo: " + ruta.getTiempoPie() + " Minutos \n\nDesgaste fisico: " + ruta.getDesgastePersona() + " Caloria \n\nRapidez : "+ruta.getRapidezCaminando());
         }
     }
 
-    public List<DetallesRuta> getRutasEncontradas() {
+    //metodo encargado  de monitorear el trafico
+    void funcionalidadTrafico(int horaActual, DetallesArco detalles) {
+        if (detalles.getListaTrafico().size() != 0) {
+            for (Trafico trafico : detalles.getListaTrafico()) {
+                if (horaActual >= trafico.getHoraInicio() && horaActual <= trafico.getHoraFinal()) {
+                    double porcentaje = ((double) trafico.getProbabilidadTrafico()) / 100.0;
+                    double m = detalles.getTiempoVehiculo() * (1 + porcentaje);
+                    double rapidez_vehiculo = detalles.getDistancia() / m;
+                    detalles.setRapidez((int) rapidez_vehiculo);
+                } else {
+                    detalles.setRapidez(detalles.getRapidezVehiculo());
+                }
+            }
+        } else {
+            detalles.setRapidez(detalles.getRapidezVehiculo());
+        }
+    }
+    
+        public List<DetallesRuta> getRutasEncontradas() {
         return rutasEncontradas;
     }
 

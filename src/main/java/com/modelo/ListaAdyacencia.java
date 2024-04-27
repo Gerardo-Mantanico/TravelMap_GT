@@ -71,6 +71,19 @@ public class ListaAdyacencia {
         this.ultimo = ultimo;
     }
 
- 
-    
+    public Arco buscar(String arco) {
+        Arco referencia = primero;
+        Arco temp = null;
+        while (primero != null) {
+            if (primero.getDestino().equals(arco)) {
+                temp = primero;
+                break;
+            }
+            primero = primero.getSiguiente();
+        }
+
+        primero = referencia;
+        return temp;
+    }
+
 }

@@ -4,6 +4,9 @@
  */
 package com.modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Gerardo Tax
@@ -14,13 +17,19 @@ public class DetallesArco {
     int consumoGas;
     int desgastePersona;
     int distancia; 
- 
+    int rapidezVehiculo;
+    int rapidezCaminando;
+    int rapidez;
+    List<Trafico> listaTrafico= new ArrayList<>();
+   
     public DetallesArco(int tiempoVehiculo, int tiempoPie, int consumoGas, int desgastePersona, int distancia) {
         this.tiempoVehiculo = tiempoVehiculo;
         this.tiempoPie = tiempoPie;
         this.consumoGas = consumoGas;
         this.desgastePersona = desgastePersona;
         this.distancia = distancia;
+        this.rapidezVehiculo=distancia/tiempoVehiculo;
+        this.rapidezCaminando=distancia/tiempoPie;
     }
 
     public int getTiempoVehiculo() {
@@ -62,6 +71,40 @@ public class DetallesArco {
     public void setDistancia(int distancia) {
         this.distancia = distancia;
     }
+
+
+    public List<Trafico> getListaTrafico() {
+        return listaTrafico;
+    }
+
+    public void setListaTrafico(List<Trafico> listaTrafico) {
+        this.listaTrafico = listaTrafico;
+    }
+
+    public int getRapidezVehiculo() {
+        return rapidezVehiculo;
+    }
+
+    public void setRapidezVehiculo(int rapidezVehiculo) {
+        this.rapidezVehiculo = rapidezVehiculo;
+    }
+
+    public int getRapidezCaminando() {
+        return rapidezCaminando;
+    }
+
+    public void setRapidezCaminando(int rapidezCaminando) {
+        this.rapidezCaminando = rapidezCaminando;
+    }
+
+    public int getRapidez() {
+        return rapidez;
+    }
+
+    public void setRapidez(int rapidez) {
+        this.rapidez = rapidez;
+    }
+     
     
 }
 

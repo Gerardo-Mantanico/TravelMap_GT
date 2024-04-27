@@ -61,10 +61,12 @@ public class DatoController implements Initializable {
                 + "Distancia: " + list.getDistancia() + "Km");
         if (estado) {
             detalles.appendText("\nTiempo : " + list.getTiempoVehiculo() + " Minutos"
-                    + "\nConsumo de gasolina: " + list.getConsumoGas() + " Galones");
+                    + "\nConsumo de gasolina: " + list.getConsumoGas() + " Galones"
+                    +"\nRapidez: "+list.getRapidezVehiculo());
         } else {
             detalles.appendText("\nTiempo : " + list.getTiempoPie() + " Minutos"
-                    + "\nDesgaste fisico : " + list.getDesgastePersona() + " Calorias");
+                    + "\nDesgaste fisico : " + list.getDesgastePersona() + " Calorias"
+                    +"\nRapidez : "+list.getRapidezCaminando());
         }
         detalles.appendText(" \n\nRuta \n");
         for (int i = 0; i < list.getLista().size(); i++) {
