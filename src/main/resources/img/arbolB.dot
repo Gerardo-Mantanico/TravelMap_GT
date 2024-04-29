@@ -2,13 +2,5 @@ digraph ArbolB {
 bgcolor=" #d0ccd7";
  node [shape=record, style=filled, fillcolor=lightblue, height=0.6, width=1.5];
     edge [arrowhead=none]; 
-1774589603 [label="<f0> |  CiudadVieja Petén SanMarcos SanBartoloméMilpasAltas SantaLucíaMilpasAltas Quiché AltaVerapaz SantaMaríadeJesús  | <f1> |  CiudadVieja Petén SanBartoloméMilpasAltas SantaLucíaMilpasAltas Quiché AltaVerapaz SantaMaríadeJesús  | <f2> |  CiudadVieja Petén SanBartoloméMilpasAltas Guatemala Suchitepequez Retalhuleu Quetzaltenango SanMarcos AltaVerapaz SantaMaríadeJesús  | "];
-1774589603 -> 74636046;
-74636046 [label="    <f0> |  CiudadVieja Petén toto SanMarcos SanBartoloméMilpasAltas SantaLucíaMilpasAltas Quiché AltaVerapaz SantaMaríadeJesús  | "];
-1774589603 -> 704178162;
-704178162 [label="    <f0> |  CiudadVieja Petén SanBartoloméMilpasAltas SanMarcos AltaVerapaz SantaMaríadeJesús  | "];
-1774589603 -> 2146025557;
-2146025557 [label="    <f0> |  CiudadVieja Petén toto SanMarcos Quetzaltenango Retalhuleu Suchitepequez Guatemala SanBartoloméMilpasAltas SantaLucíaMilpasAltas Quiché AltaVerapaz SantaMaríadeJesús  | "];
-1774589603 -> 589497335;
-589497335 [label="    <f0> |  CiudadVieja Petén SanMarcos AltaVerapaz SantaMaríadeJesús  | <f1> |  CiudadVieja Petén toto SanMarcos AltaVerapaz SantaMaríadeJesús  | <f2> |  CiudadVieja Petén SanMarcos Quetzaltenango Retalhuleu Suchitepequez Guatemala SanBartoloméMilpasAltas SantaLucíaMilpasAltas Quiché AltaVerapaz SantaMaríadeJesús  | "];
+1878373545 [label="<f0> |  Quetzaltenango Solola Quiche Huehue  | <f1> |  Quetzaltenango Huehue  | <f2> |  Quetzaltenango Solola Huehue  | <f3> |  Quetzaltenango Solola Quiche SanMarcos Huehue  | "];
 }

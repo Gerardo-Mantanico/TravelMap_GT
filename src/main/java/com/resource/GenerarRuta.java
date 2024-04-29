@@ -28,9 +28,9 @@ public class GenerarRuta {
         this.homeController = homeController;
     }
 
-    public boolean imgNodoActual(NodoGrafo origen, NodoGrafo destino) {
+    public boolean imgNodoActual(Grafo grafo, NodoGrafo origen, NodoGrafo destino) {
         boolean estado = false;
-        NodoGrafo primero = homeController.getGrafo().getPrimero();  //todo el mapa
+        NodoGrafo primero = grafo .getPrimero();  //todo el mapa
         dot.archivodot(homeController.getGrafo().getPrimero(), "src/main/resources/img/mapaInicial.dot", rutasEncontradas.get(0).getLista());
         img.img(homeController.getImgActual(), "/img/mapaInicial.png");
         if (origen == destino) {
@@ -134,7 +134,7 @@ public class GenerarRuta {
         }
         //arbol.imprimir();
         dot.generarArbol(arbol, " ", "src/main/resources/img/arbolB.dot");
-        rutasEncontradas.clear();
+      //  rutasEncontradas.clear();
     }
 
     

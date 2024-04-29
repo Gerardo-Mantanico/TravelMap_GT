@@ -16,7 +16,10 @@
             <Insets left="10.0" right="10.0" />
          </opaqueInsets>
          <children>
-            <ImageView fx:id="Mapa" fitHeight="519.0" fitWidth="1282.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Mapa" fitHeight="519.0" fitWidth="1282.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../img/thomas-kinto-6MsMKWzJWKc-unsplash.jpg" />
+               </image></ImageView>
             <Label layoutX="6.0" layoutY="490.0" text="Mapa">
                <font>
                   <Font size="18.0" />

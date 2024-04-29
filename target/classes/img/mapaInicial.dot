@@ -4,20 +4,11 @@ digraph G {
     node [fontname="Helvetica,Arial,sans-serif"];
     edge [fontname="Helvetica,Arial,sans-serif"];
     graph [ratio=0.5];
-node [shape = oval, color=red style=filled, fillcolor=indianred1];CiudadVieja Petén SanMarcos AltaVerapaz SantaMaríadeJesús ; 
- node [shape = oval color=black style=filled fillcolor=lightblue]AltaVerapaz ->  {SantaMaríadeJesús  Quiché  } 
- SantaMaríadeJesús ->  {} 
- Petén ->  {CiudadVieja  Huehuetenango  SanBartoloméMilpasAltas  } 
- CiudadVieja ->  {} 
- Quetzaltenango ->  {Retalhuleu  SanMarcos  } 
- Retalhuleu ->  {Quetzaltenango  Suchitepequez  } 
- SanMarcos ->  {Quetzaltenango  SanBartoloméMilpasAltas  AltaVerapaz  Petén  toto  } 
- Suchitepequez ->  {Guatemala  } 
- Guatemala ->  {SanBartoloméMilpasAltas  } 
- SanBartoloméMilpasAltas ->  {Petén  } 
- Huehuetenango ->  {SanLucasSacatepéquez  } 
- SanLucasSacatepéquez ->  {} 
- Quiché ->  {SantaLucíaMilpasAltas  } 
- SantaLucíaMilpasAltas ->  {SanBartoloméMilpasAltas  } 
- toto ->  {Petén  } 
+node [shape = oval, color=red style=filled, fillcolor=indianred1];Quetzaltenango Solola Quiche Huehue ; 
+ node [shape = oval color=black style=filled fillcolor=lightblue]Quetzaltenango ->  {Retalhuleu  Solola  Huehue  } 
+ Retalhuleu ->  {} 
+ Solola ->  {Huehue  Quiche  Retalhuleu  } 
+ Huehue ->  {Retalhuleu  } 
+ Quiche ->  {SanMarcos  Huehue  } 
+ SanMarcos ->  {Huehue  } 
  }
