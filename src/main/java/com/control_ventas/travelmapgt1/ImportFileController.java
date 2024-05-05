@@ -27,7 +27,8 @@ public class ImportFileController implements Initializable {
     Alerta alerta = new Alerta();
     ArchivoEntrada archivo = new ArchivoEntrada();
     ImagenIcon img= new ImagenIcon();
-    @FXML
+
+   @FXML
     private Pane Bienvenida;
 
     @FXML
@@ -36,17 +37,20 @@ public class ImportFileController implements Initializable {
     @FXML
     private Button ImportarTrafico;
 
-    @FXML
-    private Pane PanelMapa;
+
 
     @FXML
-    private ImageView Mapa;
+    private ImageView Mapas;
+
     @FXML
     private Button Siguiente;
 
     @FXML
+    private ImageView close;
+
+
+    @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        PanelMapa.setVisible(true);
         ImportarTrafico.setVisible(false);
         Siguiente.setVisible(false);
         
@@ -66,17 +70,16 @@ public class ImportFileController implements Initializable {
     @FXML
     private void ImportarTrafico() {
         if (archivo.Lectura(2, ImportarTrafico)) {
-             PanelMapa.setVisible(true);
             Siguiente.setVisible(true);
-            archivo.getGrafo().imprimir();
-            img.img(Mapa, "/img/mapaInicial.png");
+            archivo.getGrafo().imprimir(Mapas);
+            //img.img(Mapas, "/img/mapaInicial.png");
             ImportarTrafico.setVisible(false);
         }
     }
 
     @FXML
     private void siguienteVentana() throws IOException {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("Home.fxml"));
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("Home_1.fxml"));
          loader.setControllerFactory(controllerClass -> {
             return new HomeController(archivo.getGrafo(), archivo.getGrafo2());
         });

@@ -35,6 +35,7 @@ public class Funcionalidad {
         listaCaminar.add(new TipoDeRuta("La mejor ruta en base al desgaste fisico ", 9));
         listaCaminar.add(new TipoDeRuta("La mejor ruta en base a la distancia", 10));
         listaCaminar.add(new TipoDeRuta("La mejor ruta en base al desgaste fisico y la distancia", 11));
+        listaCaminar.add(new TipoDeRuta("La ruta mas rapida",12));
     }
 
     //este metdo lo que realiza es poder implementar  las diferentes listas al combobox
@@ -69,6 +70,8 @@ public class Funcionalidad {
             case 11:
                 Collections.sort(listaRuta, Comparator.comparingInt(DetallesRuta::getDesgastePersona).thenComparingInt(DetallesRuta::getDistancia));
                 break;
+            case 12:
+                Collections.sort(listaRuta, Comparator.comparingInt(DetallesRuta::getRapidezCaminando).reversed());
         }
 
         return listaRuta;

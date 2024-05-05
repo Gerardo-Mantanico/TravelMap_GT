@@ -1,6 +1,6 @@
 digraph ArbolB {
-bgcolor=" #d0ccd7";
+bgcolor=" #085872";
  node [shape=record, style=filled, fillcolor=lightblue, height=0.6, width=1.5];
     edge [arrowhead=none]; 
-1878373545 [label="<f0> |  Quetzaltenango Solola Quiche Huehue  | <f1> |  Quetzaltenango Huehue  | <f2> |  Quetzaltenango Solola Huehue  | <f3> |  Quetzaltenango Solola Quiche SanMarcos Huehue  | "];
+1706088028 [label="<f0> |  Suchitepequez Guatemala Chimaltenango  | "];
 }

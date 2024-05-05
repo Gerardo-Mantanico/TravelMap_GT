@@ -15,13 +15,7 @@ import javafx.scene.image.ImageView;
  */
 public class ImagenIcon {
     public void img( ImageView  img, String ruta){
-             Timer timer = new Timer();
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
                     Image image = new Image(getClass().getResourceAsStream(ruta));
                     img.setImage(image);
-                }
-            }, 2000);
     }
 }

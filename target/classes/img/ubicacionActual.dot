@@ -1,6 +1,6 @@
 digraph G {
 rankdir=LR;
-bgcolor="#f0f0f0";  
- node [margin=0 fontcolor=black fontsize=18 width=0.5 shape=oval style=filled fillcolor=lightblue] 
-Quetzaltenango -> Solola -> Quiche -> Huehue;
+bgcolor="#02364E";  
+  node [shape = oval color=black style=filled fillcolor="#1CC4C6" fontcolor="#031C26"] 
+SanMarcos -> SanBartoloméMilpasAltas -> Petén;
 }

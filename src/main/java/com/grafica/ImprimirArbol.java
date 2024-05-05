@@ -15,7 +15,7 @@ public class ImprimirArbol {
         try {
             FileWriter writer = new FileWriter(archivoDot);
             writer.write("digraph ArbolB {\n");
-            writer.write("bgcolor=\" #d0ccd7\";\n");
+            writer.write("bgcolor=\" #085872\";\n");
             writer.write(" node [shape=record, style=filled, fillcolor=lightblue, height=0.6, width=1.5];\n"
                     + "    edge [arrowhead=none]; \n");
             imprimirRecursivo(arbol.raiz, writer, "");

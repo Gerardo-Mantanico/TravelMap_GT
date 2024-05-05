@@ -1,6 +1,7 @@
 package com.modelo;
 
 import com.grafica.GeneradorDotFile;
+import javafx.scene.image.ImageView;
 
 
 /**
@@ -10,7 +11,7 @@ import com.grafica.GeneradorDotFile;
 public class Grafo {
     NodoGrafo primero;
     NodoGrafo ultimo;
-    
+    GeneradorDotFile dot= new GeneradorDotFile();
     public Grafo(){
         this.primero= null;
         this.ultimo=null;
@@ -61,9 +62,8 @@ public class Grafo {
        }
    }
    
-   public void imprimir(){
-      GeneradorDotFile dot= new GeneradorDotFile();
-      dot.archivodot(primero, "src/main/resources/img/mapaInicial.dot",null);
+   public void imprimir(ImageView  img){
+      dot.archivodot(primero, "src/main/resources/img/mapaInicial.dot",null,img);
    }
     public NodoGrafo getPrimero() {
         return primero;

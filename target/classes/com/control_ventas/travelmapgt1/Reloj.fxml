@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -8,9 +9,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="144.0" prefWidth="397.0" style="-fx-background-color: #d0ccd7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.control_ventas.travelmapgt1.RelojController">
+<AnchorPane id="AnchorPane" prefHeight="198.0" prefWidth="357.0" style="-fx-background-color: #031E2B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.control_ventas.travelmapgt1.RelojController">
    <children>
-      <Label layoutX="19.0" layoutY="17.0" text="Hora actual">
+      <TextField fx:id="segundos" layoutX="228.0" layoutY="51.0" prefHeight="114.0" prefWidth="121.0" promptText="45" style="-fx-background-color: #031E2B; -fx-text-fill: white; -fx-cursor: #031E2B;">
+         <font>
+            <Font size="53.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="NONE" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="minutos" layoutX="121.0" layoutY="51.0" prefHeight="113.0" prefWidth="122.0" promptText="45" style="-fx-background-color: #031E2B; -fx-text-fill: white;">
+         <font>
+            <Font size="53.0" />
+         </font></TextField>
+      <TextField fx:id="hora" layoutX="7.0" layoutY="50.0" prefHeight="114.0" prefWidth="121.0" promptText="45" style="-fx-background-color: #031E2B; -fx-text-fill: white;">
+         <font>
+            <Font size="53.0" />
+         </font></TextField>
+      <Label layoutX="54.0" text="Hora actual" textFill="WHITE">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
@@ -22,28 +39,25 @@
             </ImageView>
          </graphic>
       </Label>
-      <Button fx:id="pausar" layoutX="312.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#pausar" style="-fx-background-color: #8092ad;" text="Pausar" textFill="WHITE">
+      <Button fx:id="pausar" layoutX="206.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#pausar" prefWidth="61.0" style="-fx-background-color: #085872;" text="Pausar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="guardar" layoutX="273.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#editar" style="-fx-background-color: #8092ad;" text="Guardar Cambio" textFill="WHITE">
+      <Button fx:id="guardar" layoutX="71.0" layoutY="159.0" mnemonicParsing="false" onMouseClicked="#editar" style="-fx-background-color: #085872;" text="Guardar Cambio" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="169.0" layoutY="84.0" text=":" textFill="#8092ad">
+      <Label layoutX="116.0" layoutY="69.0" prefHeight="56.0" prefWidth="8.0" text=":" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="28.0" />
+            <Font name="System Bold" size="53.0" />
          </font>
       </Label>
-      <Label layoutX="114.0" layoutY="82.0" text=":" textFill="#8092ad">
+      <Label layoutX="228.0" layoutY="70.0" prefHeight="56.0" prefWidth="8.0" text=":" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="28.0" />
+            <Font name="System Bold" size="53.0" />
          </font>
       </Label>
-      <TextField fx:id="hora" layoutX="75.0" layoutY="92.0" prefHeight="26.0" prefWidth="33.0" />
-      <TextField fx:id="minutos" layoutX="128.0" layoutY="92.0" prefHeight="26.0" prefWidth="33.0" />
-      <TextField fx:id="segundos" layoutX="185.0" layoutY="90.0" prefHeight="26.0" prefWidth="33.0" />
    </children>
 </AnchorPane>

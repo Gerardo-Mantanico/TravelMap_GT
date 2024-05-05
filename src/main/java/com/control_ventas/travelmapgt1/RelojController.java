@@ -4,6 +4,7 @@
  */
 package com.control_ventas.travelmapgt1;
 
+import com.resource.Alerta;
 import com.resource.Reloj;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +21,7 @@ import javafx.scene.control.TextField;
 public class RelojController implements Initializable {
     boolean estado=true;
     Reloj temp;
+    Alerta alerta; 
      @FXML
     private TextField hora;
 
@@ -33,8 +35,9 @@ public class RelojController implements Initializable {
     private TextField segundos;
 
     
-    public RelojController(Reloj temp){
+    public RelojController(Reloj temp, Alerta alerta){
         this.temp=temp;
+        this.alerta=alerta;
     }
     
     @Override
@@ -59,13 +62,22 @@ public class RelojController implements Initializable {
             estado = true;
             pausar.setText("Pausar");
         }
+        cargarDatos();
     }
     
     @FXML
-    public void editar(){
-        temp.setNuevaHora(   Integer.valueOf( hora.getText()));
-        temp.setNuevosMinutos( Integer.valueOf( minutos.getText()));
-        temp.setNuevosSegundos( Integer.valueOf( segundos.getText()));
-    }
+    public void editar() {
+        try {
+            
+            temp.setNuevaHora(Integer.valueOf(hora.getText()));
+            temp.setNuevosMinutos(Integer.valueOf(minutos.getText()));
+            temp.setNuevosSegundos(Integer.valueOf(segundos.getText()));
+            cargarDatos();
+        } catch (Exception e) {
+            alerta.showAlert("Lo siento, solo se permiten números en este campo", "Error  de ingreso de hora");
+            cargarDatos();
+        }
 
+    }
+   
 }

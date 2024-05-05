@@ -5,34 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="892c6e22-be51-4544-b6f8-1a642bb113b7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/Home_1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/ImportFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/ImportFileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/RelojController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/control_ventas/travelmapgt1/RelojController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grafica/GeneradorDotFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grafica/GeneradorDotFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/modelo/Arco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/modelo/Arco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grafica/ImprimirArbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grafica/ImprimirArbol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/modelo/DetallesArco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/modelo/DetallesArco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/modelo/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/modelo/Grafo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/Funcionalidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/resource/Funcionalidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/GenerarRuta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/resource/GenerarRuta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/resource/ImagenIcon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/resource/ImagenIcon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/ArbolB.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/ArbolB.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/Dato.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/Dato.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/Home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/ImportFile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/ImportFile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/Reloj.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/control_ventas/travelmapgt1/Reloj.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/arbolB.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/arbolB.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/arbolB.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/arbolB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/img/icons8-caminando-50 (3).png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-caminando-50 (3).png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/mapaInicial.dot" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/mapaInicial.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/ubicacionActual.dot" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/ubicacionActual.dot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/img/ubicacionActual.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/ubicacionActual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TravelMapGT1-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TravelMapGT1-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Generador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Generador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ArbolB.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ArbolB.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ArbolBController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ArbolBController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Dato.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Dato.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/DatoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/DatoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/HomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ImportFile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ImportFile.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ImportFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/ImportFileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Reloj.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/Reloj.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/RelojController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/control_ventas/travelmapgt1/RelojController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/grafica/GeneradorDotFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grafica/GeneradorDotFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/grafica/ImprimirArbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grafica/ImprimirArbol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/ArbolB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/ArbolB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/Arco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/Arco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/DetallesArco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/DetallesArco.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/DetallesRuta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/DetallesRuta.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/Grafo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/ListaAdyacencia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/ListaAdyacencia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/NodoArbolB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/NodoArbolB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/NodoGrafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/NodoGrafo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/Ruta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/Ruta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/TipoDeRuta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/TipoDeRuta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/modelo/Trafico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/modelo/Trafico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/Alerta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/resource/Alerta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/Funcionalidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/resource/Funcionalidad.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/resource/GenerarRuta.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/resource/GenerarRuta.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/ImagenIcon$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/ImagenIcon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/resource/ImagenIcon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/resource/Reloj.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/resource/Reloj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/arbolB.dot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/arbolB.dot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/arbolB.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/arbolB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/img/icons8-caminando-50 (3).png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/icons8-caminando-50 (3).png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/img/mapaInicial.dot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/mapaInicial.dot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/img/mapaInicial.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/mapaInicial.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/img/ubicacionActual.dot" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/ubicacionActual.dot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/img/ubicacionActual.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/img/ubicacionActual.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,6 +158,7 @@
       <workItem from="1713547062559" duration="2663000" />
       <workItem from="1713579797618" duration="140000" />
       <workItem from="1713720132065" duration="195000" />
+      <workItem from="1714847342290" duration="180000" />
     </task>
     <servers />
   </component>

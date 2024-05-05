@@ -20,6 +20,7 @@ public class DetallesRuta {
     int rapidezVehiculo;
     int rapidezCaminando;
     List<String> lista;
+    String ubicacionActual;
 
 
     public int getTiempoVehiculo() {
@@ -104,7 +105,10 @@ public class DetallesRuta {
     public void setRapidezCaminando(int rapidezCaminando) {
         this.rapidezCaminando = rapidezCaminando;
     }
-
+  
+    public String getUbicacionAcutal(){
+        return this.lista.get(0);
+    }
  
     
 }

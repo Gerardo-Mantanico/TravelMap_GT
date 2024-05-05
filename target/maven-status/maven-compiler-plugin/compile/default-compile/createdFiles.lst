@@ -1,5 +1,4 @@
 com\grafica\GeneradorDotFile.class
-com\resource\ImagenIcon$1.class
 com\control_ventas\travelmapgt1\RelojController.class
 com\resource\ImagenIcon.class
 com\modelo\DetallesArco.class
@@ -18,6 +17,7 @@ com\grafica\ImprimirArbol.class
 com\modelo\Trafico.class
 module-info.class
 com\modelo\Arco.class
+com\control_ventas\travelmapgt1\Main.class
 com\resource\GenerarRuta.class
 com\resource\Funcionalidad.class
 com\modelo\DetallesRuta.class

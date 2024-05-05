@@ -20,6 +20,7 @@ public class DetallesArco {
     int rapidezVehiculo;
     int rapidezCaminando;
     int rapidez;
+    int tiempo;
     List<Trafico> listaTrafico= new ArrayList<>();
    
     public DetallesArco(int tiempoVehiculo, int tiempoPie, int consumoGas, int desgastePersona, int distancia) {
@@ -103,6 +104,14 @@ public class DetallesArco {
 
     public void setRapidez(int rapidez) {
         this.rapidez = rapidez;
+    }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
     }
      
     

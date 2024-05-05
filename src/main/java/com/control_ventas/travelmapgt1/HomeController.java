@@ -9,11 +9,9 @@ import com.resource.GenerarRuta;
 import com.resource.Reloj;
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,29 +23,32 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class HomeController   implements Initializable{
     Grafo grafo;
     Grafo grafo2;
     Grafo grafoAux;
-    Alerta alerta= new Alerta();
-    Funcionalidad funcionalidad= new Funcionalidad();
-    String tipoRuta=" ";
-    List<DetallesRuta> listaRutas=null;
-    GenerarRuta  generadorRuta= new GenerarRuta(this);
+    Alerta alerta = new Alerta();
+    Funcionalidad funcionalidad = new Funcionalidad();
+    String tipoRuta = " ";
+    List<DetallesRuta> listaRutas = null;
+    GenerarRuta generadorRuta = new GenerarRuta(this);
     Reloj reloj = new Reloj();
     @FXML
     private RadioButton Caminar;
 
     @FXML
     private ComboBox<String> Destino;
-      @FXML
+    @FXML
     private Button VerArbol;
 
     @FXML
     private Button VerDatos;
 
+    @FXML
+    private Pane panelDetalles;
     @FXML
     private Button Empezar;
 
@@ -74,10 +75,68 @@ public class HomeController   implements Initializable{
 
     @FXML
     private TextArea DetallesRuta;
-    
+
     @FXML
     private ComboBox<TipoDeRuta> SelecionarRuta;
-    
+
+    @FXML
+    private Label UActual;
+
+    public Grafo getGrafo() {
+        return grafo;
+    }
+
+    public Alerta getAlerta() {
+        return alerta;
+    }
+
+    public String getTipoRuta() {
+        return tipoRuta;
+    }
+
+    public RadioButton getCaminar() {
+        return Caminar;
+    }
+
+    public ComboBox<String> getDestino() {
+        return Destino;
+    }
+
+    public Button getEmpezar() {
+        return Empezar;
+    }
+
+    public ImageView getImgActual() {
+        return ImgActual;
+    }
+
+    public ImageView getImgMejorRuta() {
+        return ImgMejorRuta;
+    }
+
+    public ComboBox<String> getPosiblesRutas() {
+        return PosiblesRutas;
+    }
+
+    public Label getReloj() {
+        return Reloj;
+    }
+
+    public ImageView getSiguienteRuta() {
+        return SiguienteRuta;
+    }
+
+    public RadioButton getVehiculo() {
+        return Vehiculo;
+    }
+
+    public TextArea getDetallesRuta() {
+        return DetallesRuta;
+    }
+
+    public Label getUActual() {
+        return UActual;
+    }
 
     public HomeController(Grafo grafo, Grafo grafo2) {
         this.grafo = grafo;
@@ -122,8 +181,6 @@ public class HomeController   implements Initializable{
             alerta.showAlert("Por favor, Selecione una Ubicacion", "Error de selecion");
             Vehiculo.setSelected(false);
             Caminar.setSelected(false);
-            VerDatos.setVisible(true);
-            VerArbol.setVisible(true);
         }
     }
 
@@ -133,21 +190,25 @@ public class HomeController   implements Initializable{
         if (tipoRuta.equals("Vehiculo")) {
             generadorRuta.encontrarRutas(grafo, Origen.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta(),obtenerHora()); //busca las posibles rutas
             this.listaRutas =funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId());  //busca  las posibles rutas en base la funcionalidad
-            generadorRuta.crearRuta(true);
+          //  generadorRuta.crearRuta(true);
             generadorRuta.imgNodoActual(grafo,grafo.buscarNodo(Origen.getValue()), grafo.buscarNodo(Destino.getValue()));
-            generadorRuta.VerDetalles(tipoRuta);
+            generadorRuta.VerDetalles(tipoRuta, Reloj.getText());
             generadorRuta.imprimir();
             this.grafoAux=grafo;
         } else {
                 generadorRuta.encontrarRutas(grafo2, Origen.getValue(), Destino.getValue(), new ArrayList<String>(), new DetallesRuta(),obtenerHora()); //busca las posibles rutas
                 this.listaRutas = funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId());  //busca  las posibles rutas en base la funcionalidad
                 generadorRuta.imgNodoActual(grafo2, grafo2.buscarNodo(Origen.getValue()), grafo2.buscarNodo(Destino.getValue()));
-                generadorRuta.crearRuta(true);
-                generadorRuta.VerDetalles(tipoRuta);
+             //   generadorRuta.crearRuta(true);
+                generadorRuta.VerDetalles(tipoRuta,Reloj.getText());
                 generadorRuta.imprimir();
                 this.grafoAux=grafo2;
         }
+         VerDatos.setVisible(true);
+         VerArbol.setVisible(true);
          PosiblesRutas.setVisible(true);
+         panelDetalles.setVisible(true);
+         UActual.setVisible(true);
          SiguienteRuta.setVisible(true);}catch(Exception e){alerta.showAlert("Lo siento no se pudo encontrar una ruta", "Error de busqueda de ruta");}
     }
     
@@ -174,47 +235,9 @@ public class HomeController   implements Initializable{
         stage.setScene(new Scene(root));
         stage.show();
     }
+  
     
-    public Grafo getGrafo() {
-        return grafo;
-    }
-    public Alerta getAlerta() {
-        return alerta;
-    }
-    public String getTipoRuta() {
-        return tipoRuta;
-    }
-    public RadioButton getCaminar() {
-        return Caminar;
-    }
-    public ComboBox<String> getDestino() {
-        return Destino;
-    }
-    public Button getEmpezar() {
-        return Empezar;
-    }
-    public ImageView getImgActual() {
-        return ImgActual;
-    }
-    public ImageView getImgMejorRuta() {
-        return ImgMejorRuta;
-    }
-    public ComboBox<String> getPosiblesRutas() {
-        return PosiblesRutas;
-    }
-    public Label getReloj() {
-        return Reloj;
-    }
-    public ImageView getSiguienteRuta() {
-        return SiguienteRuta;
-    }
-    public RadioButton getVehiculo() {
-        return Vehiculo;
-    }
-    public TextArea getDetallesRuta() {
-        return DetallesRuta;
-    }
-   
+
     //metodo que se encarga de cargar los recursos al inicio
     void Cargar() {
         generadorRuta.mapa();
@@ -262,14 +285,14 @@ public class HomeController   implements Initializable{
             return;
         }
         funcionalidad.buscarRuta(generadorRuta.getRutasEncontradas(), SelecionarRuta.getValue().getId()); //busca  las posibles rutas en base la funcionalidad
-        generadorRuta.crearRuta(true);
+     //   generadorRuta.crearRuta(true);
         if (generadorRuta.imgNodoActual(grafoAux, grafoAux.buscarNodo(PosiblesRutas.getValue()), grafoAux.buscarNodo(Destino.getValue()))) {
             PosiblesRutas.setVisible(false);
             SiguienteRuta.setVisible(false);
             alerta.showAlert("¡Excelente! Has alcanzado tu destino.", "Informativo");
             elementos();
         }
-        generadorRuta.VerDetalles(tipoRuta);
+        generadorRuta.VerDetalles(tipoRuta, Reloj.getText());
         generadorRuta.imprimir();
     }
     
@@ -278,7 +301,7 @@ public class HomeController   implements Initializable{
    public void editarReloj() throws IOException{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Reloj.fxml"));
         loader.setControllerFactory(controllerClass -> {
-            return new RelojController(reloj);
+            return new RelojController(reloj, this.alerta);
         });
         Parent root = loader.load();
         RelojController controllerB = loader.getController();
@@ -301,5 +324,7 @@ public class HomeController   implements Initializable{
         Empezar.setVisible(false);
         VerDatos.setVisible(false);
         VerArbol.setVisible(false);
+        panelDetalles.setVisible(false);
+        UActual.setVisible(false);
    }
 }

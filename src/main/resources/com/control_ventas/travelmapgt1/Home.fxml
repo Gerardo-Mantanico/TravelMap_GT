@@ -12,24 +12,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="786.0" prefWidth="1350.0" style="-fx-background-color: #d0ccd7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.control_ventas.travelmapgt1.HomeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="786.0" prefWidth="1350.0" style="-fx-background-color: #02364E;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.control_ventas.travelmapgt1.HomeController">
    <children>
-      <Pane layoutX="22.0" layoutY="182.0" prefHeight="439.0" prefWidth="958.0" style="-fx-background-color: #f0f0f0;">
-         <children>
-            <ImageView fx:id="ImgActual" fitHeight="400.0" fitWidth="947.0" layoutX="5.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
-            <Label alignment="BOTTOM_CENTER" layoutX="1.0" layoutY="5.0" text="Ubicacion Actual">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="36.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../img/icons8-marcador-48.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Label>
-         </children></Pane>
       <ComboBox fx:id="Origen" layoutX="220.0" layoutY="78.0" prefHeight="25.0" prefWidth="198.0" promptText="Origen" style="-fx-background-color: #f0f0f0;" />
       <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="197.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -66,7 +50,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </RadioButton>
-      <Button fx:id="Empezar" layoutX="1143.0" layoutY="73.0" mnemonicParsing="false" onAction="#empezar" prefHeight="27.0" prefWidth="127.0" style="-fx-background-color: #8092ad;" text=" Empezar viaje" textFill="WHITE">
+      <Button fx:id="Empezar" layoutX="1143.0" layoutY="73.0" mnemonicParsing="false" onAction="#empezar" prefHeight="27.0" prefWidth="127.0" style="-fx-background-color: #1CC4C6;" text=" Empezar viaje" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -80,9 +64,9 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Pane layoutX="1030.0" layoutY="181.0" prefHeight="185.0" prefWidth="297.0" style="-fx-background-color: #f0f0f0;">
+      <Pane layoutX="1030.0" layoutY="181.0" prefHeight="277.0" prefWidth="297.0" style="-fx-background-color: #085872;">
          <children>
-            <Label layoutX="3.0" layoutY="-1.0" text="Detalle de ruta">
+            <Label layoutX="3.0" layoutY="-1.0" text="Detalle de ruta" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
@@ -94,7 +78,7 @@
                   </ImageView>
                </graphic>
             </Label>
-            <TextArea fx:id="DetallesRuta" layoutX="-1.0" layoutY="25.0" prefHeight="162.0" prefWidth="297.0" style="-fx-control-inner-background: #f0f0f0;">
+            <TextArea fx:id="DetallesRuta" layoutX="-1.0" layoutY="25.0" prefHeight="252.0" prefWidth="297.0" style="-fx-control-inner-background: #085872;">
                <font>
                   <Font size="14.0" />
                </font>
@@ -109,7 +93,7 @@
             <Image url="@../../../img/icons8-siguiente-64.png" />
          </image>
       </ImageView>
-      <Pane layoutX="22.0" layoutY="666.0" prefHeight="98.0" prefWidth="1306.0" style="-fx-background-color: f0f0f0;">
+      <Pane layoutX="1074.0" layoutY="666.0" prefHeight="98.0" prefWidth="254.0" style="-fx-background-color: #02364E;">
          <children>
             <ImageView fitHeight="46.0" fitWidth="39.0" layoutX="11.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -121,15 +105,15 @@
                   <Image url="@../../../img/icons8-marcador-487.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="ImgMejorRuta" fitHeight="98.0" fitWidth="1203.0" layoutX="53.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="ImgMejorRuta" fitHeight="75.0" fitWidth="1203.0" layoutX="53.0" layoutY="23.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
-      <Label layoutX="23.0" layoutY="636.0" text="Mejor ruta">
+      <Label layoutX="1032.0" layoutY="639.0" text="Mejor ruta" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="-1.0" prefHeight="31.0" prefWidth="1350.0" style="-fx-background-color: #8092ad;">
+      <Pane layoutX="-1.0" prefHeight="31.0" prefWidth="1350.0" style="-fx-background-color: #085872;">
          <children>
             <ImageView fitHeight="33.0" fitWidth="30.0" layoutX="1321.0" layoutY="1.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -151,16 +135,38 @@
          </children>
       </Pane>
       <ComboBox fx:id="SelecionarRuta" layoutX="926.0" layoutY="79.0" prefHeight="25.0" prefWidth="198.0" promptText="Tipo de ruta" style="-fx-background-color: #f0f0f0;" />
-      <Button fx:id="VerDatos" layoutX="1254.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#verDatos" style="-fx-background-color: #8092ad;" text="Ver datos" textFill="WHITE">
+      <Button fx:id="VerDatos" layoutX="1254.0" layoutY="481.0" mnemonicParsing="false" onMouseClicked="#verDatos" style="-fx-background-color: #1CC4C6;" text="Ver datos" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="VerArbol" layoutX="1254.0" layoutY="432.0" mnemonicParsing="false" onMouseClicked="#verArbol" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: #8092ad;" text="Ver rutas" textFill="WHITE">
+      <Button fx:id="VerArbol" layoutX="1254.0" layoutY="527.0" mnemonicParsing="false" onMouseClicked="#verArbol" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: #1CC4C6;" text="Ver rutas" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
+      <Label alignment="BOTTOM_CENTER" layoutX="68.0" layoutY="144.0" text="Ubicacion Actual" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/icons8-marcador-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <ImageView fx:id="ImgActual" fitHeight="266.0" fitWidth="572.0" layoutX="102.0" layoutY="444.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../img/mapaInicial.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="612.0" fitWidth="1040.0" layoutX="-10.0" layoutY="175.0" opacity="0.42" pickOnBounds="true">
+         <image>
+            <Image url="@../../../img/bitmap.jpg" />
+         </image>
+      </ImageView>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />
