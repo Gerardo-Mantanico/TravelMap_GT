@@ -17,7 +17,6 @@ com\grafica\ImprimirArbol.class
 com\modelo\Trafico.class
 module-info.class
 com\modelo\Arco.class
-com\control_ventas\travelmapgt1\Main.class
 com\resource\GenerarRuta.class
 com\resource\Funcionalidad.class
 com\modelo\DetallesRuta.class
