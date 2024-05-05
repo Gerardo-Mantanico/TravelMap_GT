@@ -10,5 +10,5 @@ horarios de tráfico, así como la eficiencia del trayecto. Para lograr esto, Tr
 como la distancia del viaje, teniendo en cuenta el consumo de gasolina o el esfuerzo físico necesario, así como la
 rapidez de la ruta sugerida
 [![Screenshot-2024-05-04-133322.png](https://i.postimg.cc/wTgWwsZK/Screenshot-2024-05-04-133322.png)](https://postimg.cc/c6kMH6dT)
-[![Screenshot-2024-05-04-133322.png](https://i.postimg.cc/wTgWwsZK/Screenshot-2024-05-04-133322.png)](https://postimg.cc/c6kMH6dT)
+
 
