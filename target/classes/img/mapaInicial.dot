@@ -5,8 +5,7 @@ digraph G {
     edge [fontname="Helvetica,Arial,sans-serif"];
     graph [ratio=0.5];
 node [shape = oval, color=red style=filled, fillcolor=indianred1];
-Quiche Retalhuleu ; 
-  node [shape = oval color=black style=filled fillcolor="#1CC4C6" fontcolor="#031C26"]
+node [shape = oval color=black style=filled fillcolor=lightblue] 
 Retalhuleu -> Suchitepequez[label = " 44  Km  "  color="white",fontcolor=white]; 
 Retalhuleu -> SanRaymundo[label = " 32  Km  "  color="white",fontcolor=white]; 
 Retalhuleu -> SantiagoSacatepequez[label = " 42  Km  "  color="white",fontcolor=white]; 

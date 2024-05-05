@@ -2,5 +2,9 @@ digraph ArbolB {
 bgcolor=" #085872";
  node [shape=record, style=filled, fillcolor=lightblue, height=0.6, width=1.5];
     edge [arrowhead=none]; 
-2009405248 [label="<f0> |  Quiche Retalhuleu  | "];
+482911126 [label="<f0> |  SanLucasSacatepéquez Huehuetenango Retalhuleu Quetzaltenango Suchitepequez Sololá  | "];
+482911126 -> 1689980697;
+1689980697 [label="    <f0> |  SanLucasSacatepéquez Huehuetenango Guatemala Suchitepequez Sololá  | "];
+482911126 -> 1991554089;
+1991554089 [label="    <f0> |  SanLucasSacatepéquez Sololá  | <f1> |  SanLucasSacatepéquez Quetzaltenango Suchitepequez Sololá  | <f2> |  SanLucasSacatepéquez Quetzaltenango Retalhuleu Huehuetenango Guatemala Suchitepequez Sololá  | "];
 }

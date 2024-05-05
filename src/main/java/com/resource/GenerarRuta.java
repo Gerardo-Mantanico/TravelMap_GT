@@ -161,28 +161,32 @@ public class GenerarRuta {
 
     //metodo encargado  de monitorear el trafico
     void funcionalidadTrafico(int horaActual, DetallesArco detalles) {
-        System.out.println("hora actual " + horaActual);
+        int tiempoAcumulado = 0;
+        float rapidezAux = 0;
         if (detalles.getListaTrafico().size() != 0) {
             for (Trafico trafico : detalles.getListaTrafico()) {
-                System.out.println("hora final "+trafico.getHoraFinal());
-                if (horaActual >= trafico.getHoraInicio() && horaActual <trafico.getHoraFinal()) {
+                if (horaActual >= trafico.getHoraInicio() && horaActual < trafico.getHoraFinal()) {
                     double porcentaje = ((double) trafico.getProbabilidadTrafico()) / 100.0;
                     double m = detalles.getTiempoVehiculo() * (1 + porcentaje);
                     double rapidez_vehiculo = detalles.getDistancia() / m;
-                    detalles.setRapidez((float) rapidez_vehiculo);
-                    detalles.setTiempo((int) m);
-                } else {
-                    detalles.setRapidez(detalles.getRapidezVehiculo());
-                    detalles.setTiempo(detalles.getTiempoVehiculo());
+                    rapidezAux = rapidezAux + (float) rapidez_vehiculo;
+                    tiempoAcumulado = tiempoAcumulado + (int) m;
                 }
+            }
+            if (tiempoAcumulado == 0) {
+                  detalles.setTiempo(detalles.getTiempoVehiculo());
+                   detalles.setRapidez(detalles.getRapidezVehiculo());
+             
+            } else {
+                  detalles.setTiempo(tiempoAcumulado);
+                     detalles.setRapidez(rapidezAux);
             }
         } else {
             detalles.setRapidez(detalles.getRapidezVehiculo());
             detalles.setTiempo(detalles.getTiempoVehiculo());
         }
-         System.out.println("Verificar si existe Trafico "+detalles.getTiempo());
     }
-    
+
         public List<DetallesRuta> getRutasEncontradas() {
         return rutasEncontradas;
     }
@@ -216,7 +220,7 @@ public class GenerarRuta {
         if (hora == 24) {
             hora = 0;
         }
-        System.out.println("Calulos hora " + horaFinal + "   residuo es " + minFinal);
+       // System.out.println("Calulos hora " + horaFinal + "   residuo es " + minFinal);
         return "Hora de partida  " + horaPartida + " \n\n Hora de llegada " + hora + ":" + minFinal + ":00 ";
     }
 

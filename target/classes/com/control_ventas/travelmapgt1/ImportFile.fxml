@@ -63,7 +63,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <ImageView fx:id="Mapas" fitHeight="540.0" fitWidth="1310.0" layoutX="20.0" layoutY="211.0" pickOnBounds="true">
+      <ImageView fx:id="Mapas" fitHeight="552.0" fitWidth="1470.0" layoutX="20.0" layoutY="199.0" pickOnBounds="true">
          <image>
             <Image url="@../../../img/pixelcut-export.png" />
          </image>
