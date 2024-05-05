@@ -17,9 +17,9 @@ public class DetallesArco {
     int consumoGas;
     int desgastePersona;
     int distancia; 
-    int rapidezVehiculo;
-    int rapidezCaminando;
-    int rapidez;
+    float rapidezVehiculo;
+    float rapidezCaminando;
+    float rapidez;
     int tiempo;
     List<Trafico> listaTrafico= new ArrayList<>();
    
@@ -82,27 +82,27 @@ public class DetallesArco {
         this.listaTrafico = listaTrafico;
     }
 
-    public int getRapidezVehiculo() {
+    public float getRapidezVehiculo() {
         return rapidezVehiculo;
     }
 
-    public void setRapidezVehiculo(int rapidezVehiculo) {
+    public void setRapidezVehiculo(float rapidezVehiculo) {
         this.rapidezVehiculo = rapidezVehiculo;
     }
 
-    public int getRapidezCaminando() {
+    public float getRapidezCaminando() {
         return rapidezCaminando;
     }
 
-    public void setRapidezCaminando(int rapidezCaminando) {
+    public void setRapidezCaminando(float rapidezCaminando) {
         this.rapidezCaminando = rapidezCaminando;
     }
 
-    public int getRapidez() {
+    public float getRapidez() {
         return rapidez;
     }
 
-    public void setRapidez(int rapidez) {
+    public void setRapidez(float rapidez) {
         this.rapidez = rapidez;
     }
 

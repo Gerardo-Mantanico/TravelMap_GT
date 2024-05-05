@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="198.0" prefWidth="357.0" style="-fx-background-color: #031E2B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.control_ventas.travelmapgt1.RelojController">
    <children>
-      <TextField fx:id="segundos" layoutX="228.0" layoutY="51.0" prefHeight="114.0" prefWidth="121.0" promptText="45" style="-fx-background-color: #031E2B; -fx-text-fill: white; -fx-cursor: #031E2B;">
+      <TextField fx:id="segundos" layoutX="228.0" layoutY="51.0" prefHeight="114.0" prefWidth="121.0" promptText="45" style="-fx-background-color: #031E2B; -fx-text-fill: white;">
          <font>
             <Font size="53.0" />
          </font>

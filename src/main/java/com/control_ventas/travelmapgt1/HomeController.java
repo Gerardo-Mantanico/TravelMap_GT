@@ -209,6 +209,7 @@ public class HomeController   implements Initializable{
          PosiblesRutas.setVisible(true);
          panelDetalles.setVisible(true);
          UActual.setVisible(true);
+         alerta.showAlert("¡Buena suerte en tu viaje!", "Informativo");
          SiguienteRuta.setVisible(true);}catch(Exception e){alerta.showAlert("Lo siento no se pudo encontrar una ruta", "Error de busqueda de ruta");}
     }
     

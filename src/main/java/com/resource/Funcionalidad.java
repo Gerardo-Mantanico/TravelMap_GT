@@ -59,7 +59,7 @@ public class Funcionalidad {
                 Collections.sort(listaRuta, Comparator.comparingInt(DetallesRuta::getConsumoGas).thenComparingInt(DetallesRuta::getDistancia));
                 break;
             case 4:
-                Collections.sort(listaRuta, Comparator.comparingInt(DetallesRuta::getRapidezVehiculo).reversed());
+                Collections.sort(listaRuta, Comparator.comparingDouble(DetallesRuta::getRapidezVehiculo).reversed());
                 break;
             case 9:
                 Collections.sort(listaRuta, Comparator.comparingInt(DetallesRuta::getDesgastePersona));
@@ -71,7 +71,7 @@ public class Funcionalidad {
                 Collections.sort(listaRuta, Comparator.comparingInt(DetallesRuta::getDesgastePersona).thenComparingInt(DetallesRuta::getDistancia));
                 break;
             case 12:
-                Collections.sort(listaRuta, Comparator.comparingInt(DetallesRuta::getRapidezCaminando).reversed());
+                Collections.sort(listaRuta, Comparator.comparingDouble(DetallesRuta::getRapidezCaminando).reversed());
         }
 
         return listaRuta;

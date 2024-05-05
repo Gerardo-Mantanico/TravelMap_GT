@@ -77,6 +77,7 @@ public class GenerarRuta {
         detalles1.setDesgastePersona(detalles.getDesgastePersona());
         detalles1.setDistancia(detalles.getDistancia());
         detalles1.setTiempoPie(detalles.getTiempoPie());
+        System.out.println("tiempo fina "+detalles.getTiempoVehiculo());
         detalles1.setTiempoVehiculo(detalles.getTiempoVehiculo());
         detalles1.setRapidezVehiculo(detalles.getRapidezVehiculo());
         detalles1.setRapidezCaminando(detalles.getRapidezCaminando());
@@ -94,7 +95,7 @@ public class GenerarRuta {
                     detalles.setDistancia(detalles.getDistancia() + arco.getDetalle().getDistancia());
                     detalles.setTiempoPie(detalles.getTiempoPie() + arco.getDetalle().getTiempoPie());
                     funcionalidadTrafico(hora, arco.getDetalle());  // Verificar si existe tráfico
-                     detalles.setTiempoVehiculo(detalles.getTiempoVehiculo() + arco.getDetalle().getTiempo());
+                    detalles.setTiempoVehiculo(detalles.getTiempoVehiculo() + arco.getDetalle().getTiempo());
                     detalles.setRapidezVehiculo(detalles.getRapidezVehiculo() + arco.getDetalle().getRapidez());
                     detalles.setRapidezCaminando(detalles.getRapidezCaminando() + arco.getDetalle().getRapidezCaminando());
                     // Llamada recursiva con el destino del arco como nuevo inicio
@@ -121,8 +122,8 @@ public class GenerarRuta {
     public void imprimir() {
         for (DetallesRuta ruta : rutasEncontradas) {
             System.out.println("Distancia Total   " + ruta.getDistancia() + " Km   Total de tiempo vehiculo " + ruta.getTiempoVehiculo() + " s   Caminando"
-                    + ruta.getTiempoPie() + " s  Consumo de Gas " + ruta.getConsumoGas() + " galones  desgaste fisico " + ruta.getDesgastePersona()+"    rapidez V  "+ruta.getRapidezVehiculo()+
-                        "radiez caminando "+ruta.getRapidezCaminando());
+                    + ruta.getTiempoPie() + " s  Consumo de Gas " + ruta.getConsumoGas() + " galones  desgaste fisico " + ruta.getDesgastePersona() + "    rapidez V  " + ruta.getRapidezVehiculo()
+                    + "radiez caminando " + ruta.getRapidezCaminando());
             for (String nodo : ruta.getLista()) {
                 System.out.print(nodo + " -> ");
             }
@@ -140,34 +141,36 @@ public class GenerarRuta {
         }
         //arbol.imprimir();
         dot.generarArbol(arbol, " ", "src/main/resources/img/arbolB.dot");
-      //  rutasEncontradas.clear();
+        //  rutasEncontradas.clear();
     }
 
-    
+
     //metodo para mostrar los detalles de las rutas
-    public void VerDetalles(String tipo ,String hora) {
+    public void VerDetalles(String tipo, String hora) {
         this.homeController.getDetallesRuta().setText("");
         DetallesRuta ruta = rutasEncontradas.get(0);
         if (tipo.equals("Vehiculo")) {
-            homeController.getDetallesRuta().setText("Distancia: " + ruta.getDistancia() + " Km  \n\nTiempo: " + convertirMinutosAHorasYMinutos(ruta.getTiempoVehiculo() )+ "   \n\nConsumo de gasolina: " + ruta.getConsumoGas() + " Galones \n\nRapidez : "+ruta.getRapidezVehiculo()+" Km/Min\n\n "
-                    + cacularTiempo(hora,convertirMinutosAHorasYMinutos(ruta.getTiempoVehiculo() )));
+            homeController.getDetallesRuta().setText("Distancia: " + ruta.getDistancia() + " Km  \n\nTiempo: " + convertirMinutosAHorasYMinutos(ruta.getTiempoVehiculo()) + "   \n\nConsumo de gasolina: " + ruta.getConsumoGas() + " Galones \n\nRapidez : " + ruta.getRapidezVehiculo() + " Km/Min\n\n "
+                    + cacularTiempo(hora, convertirMinutosAHorasYMinutos(ruta.getTiempoVehiculo())));
         } else {
-            homeController.getDetallesRuta().setText("Distancia: " + ruta.getDistancia() + " Km  \n\nTiempo: " +convertirMinutosAHorasYMinutos(ruta.getTiempoPie() ) + " \n\nDesgaste fisico: " + ruta.getDesgastePersona() + " Caloria \n\nRapidez : "+ruta.getRapidezCaminando()+" Km/Min\n\n"
-                    +cacularTiempo(hora,convertirMinutosAHorasYMinutos(ruta.getTiempoPie() )));
+            homeController.getDetallesRuta().setText("Distancia: " + ruta.getDistancia() + " Km  \n\nTiempo: " + convertirMinutosAHorasYMinutos(ruta.getTiempoPie()) + " \n\nDesgaste fisico: " + ruta.getDesgastePersona() + " Caloria \n\nRapidez : " + ruta.getRapidezCaminando() + " Km/Min\n\n"
+                    + cacularTiempo(hora, convertirMinutosAHorasYMinutos(ruta.getTiempoPie())));
         }
-        homeController.getUActual().setText("Ubicacion Actual: "+ruta.getUbicacionAcutal());
+        homeController.getUActual().setText("Ubicacion Actual: " + ruta.getUbicacionAcutal());
     }
 
     //metodo encargado  de monitorear el trafico
     void funcionalidadTrafico(int horaActual, DetallesArco detalles) {
+        System.out.println("hora actual " + horaActual);
         if (detalles.getListaTrafico().size() != 0) {
             for (Trafico trafico : detalles.getListaTrafico()) {
-                if (horaActual >= trafico.getHoraInicio() && horaActual <= trafico.getHoraFinal()) {
+                System.out.println("hora final "+trafico.getHoraFinal());
+                if (horaActual >= trafico.getHoraInicio() && horaActual <trafico.getHoraFinal()) {
                     double porcentaje = ((double) trafico.getProbabilidadTrafico()) / 100.0;
                     double m = detalles.getTiempoVehiculo() * (1 + porcentaje);
                     double rapidez_vehiculo = detalles.getDistancia() / m;
-                    detalles.setRapidez((int) rapidez_vehiculo);
-                    detalles.setTiempo((int)m);
+                    detalles.setRapidez((float) rapidez_vehiculo);
+                    detalles.setTiempo((int) m);
                 } else {
                     detalles.setRapidez(detalles.getRapidezVehiculo());
                     detalles.setTiempo(detalles.getTiempoVehiculo());
@@ -177,6 +180,7 @@ public class GenerarRuta {
             detalles.setRapidez(detalles.getRapidezVehiculo());
             detalles.setTiempo(detalles.getTiempoVehiculo());
         }
+         System.out.println("Verificar si existe Trafico "+detalles.getTiempo());
     }
     
         public List<DetallesRuta> getRutasEncontradas() {
@@ -185,24 +189,23 @@ public class GenerarRuta {
 
         //metodo par trasformar minutos a horas
     String convertirMinutosAHorasYMinutos(int minutos) {
+        int horas=0;
         if (minutos < 0) 
             return "Error: los minutos no pueden ser negativos";
-        int horas = minutos / 60;
+         horas= minutos / 60;
         int minutosRestantes = minutos % 60;
         String tiempoFormateado = horas + " horas y " + minutosRestantes + " minutos";
         return tiempoFormateado;
     }
 
     String cacularTiempo(String horaActual, String duracion) {
-        String formato = "AM";
         String horaPartida;
         String[] ActualHora = horaActual.split(":");
         String[] tiempo = duracion.split(" ");
         //hora actual
         int hora = Integer.valueOf(ActualHora[0]);
         int min = Integer.valueOf(ActualHora[1]);
-            horaPartida = hora + ":" + min + ":00";
- 
+        horaPartida = hora + ":" + min + ":00";
         //hora de duracion
         int hora1 = Integer.valueOf(tiempo[0]);
         int min1 = Integer.valueOf(tiempo[3]);
@@ -210,10 +213,9 @@ public class GenerarRuta {
         int horaFinal = sumarMinutos / 60;
         hora = hora + horaFinal + hora1;
         int minFinal = sumarMinutos % 60;
-        if (hora==24 ) {
-            hora =0;
+        if (hora == 24) {
+            hora = 0;
         }
-
         System.out.println("Calulos hora " + horaFinal + "   residuo es " + minFinal);
         return "Hora de partida  " + horaPartida + " \n\n Hora de llegada " + hora + ":" + minFinal + ":00 ";
     }

@@ -2,5 +2,5 @@ digraph ArbolB {
 bgcolor=" #085872";
  node [shape=record, style=filled, fillcolor=lightblue, height=0.6, width=1.5];
     edge [arrowhead=none]; 
-1706088028 [label="<f0> |  Suchitepequez Guatemala Chimaltenango  | "];
+2009405248 [label="<f0> |  Quiche Retalhuleu  | "];
 }
